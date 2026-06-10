@@ -1,0 +1,453 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Módulo 3 | Situaciones didácticas multinivel y simultáneas</title><style>
+:root{--navy:#070b24;--blue:#0b2a6f;--cyan:#16b5e8;--gold:#e7bb32;--green:#138a4a;--red:#ef1d3b;--ink:#101828;--muted:#667085;--soft:#f7f9fc;--line:#e6eaf2;--card:#fff;--shadow:0 22px 55px rgba(15,23,42,.14)}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#eef2f6}body{overflow:hidden}
+.deck{height:100vh;width:100vw;position:relative;background:radial-gradient(circle at 88% 12%,rgba(22,181,232,.18),transparent 30%),linear-gradient(135deg,#ffffff,#eef4f9 58%,#fff8e8)}
+.topbar{position:absolute;top:18px;left:34px;right:34px;height:68px;background:rgba(255,255,255,.88);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;z-index:9;backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.brand img{height:42px;object-fit:contain}.brand small{display:block;text-transform:none;letter-spacing:0;color:var(--muted);font-weight:700}
+.moduleBadge{background:var(--navy);color:white;border-radius:999px;padding:12px 18px;font-weight:950;box-shadow:0 10px 24px rgba(7,11,36,.25)}
+.slide{position:absolute;inset:0;padding:110px 54px 88px;display:none;overflow-y:auto}.slide.active{display:block}.slideInner{max-width:1180px;margin:0 auto;min-height:calc(100vh - 220px);display:flex;flex-direction:column;justify-content:center}
+.sectionLabel{display:inline-flex;align-self:flex-start;background:#fff2cd;color:#7a4d00;border:1px solid #f0d07a;border-radius:999px;padding:8px 12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em;font-size:12px;margin-bottom:12px}
+h1{font-size:clamp(44px,6vw,76px);line-height:.95;margin:14px 0 18px;letter-spacing:-.055em}h2{font-size:clamp(34px,4.2vw,56px);line-height:1.02;margin:8px 0 18px;letter-spacing:-.045em}h3{font-size:24px;margin:0 0 10px}p,li{font-size:20px;line-height:1.55}.lead{font-size:25px;color:#334155}.smallLead{font-size:21px}.muted{color:var(--muted)}.slideContent{width:100%}
+.pill,.tagrow span{display:inline-flex;align-items:center;background:#eef8ff;color:#0b4a6f;border:1px solid #bde9ff;border-radius:999px;padding:9px 12px;font-weight:950;margin:4px}.tagrow{margin:18px 0}.callout{border-left:7px solid var(--gold);background:#fff;border-radius:20px;padding:18px 20px;box-shadow:var(--shadow);font-size:20px;margin-top:18px}
+.coverGrid,.grid2,.videoGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.caseFocus,.problemBox,.labBox,.simBox,.scenario{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow)}.accent{background:linear-gradient(135deg,#071029,#12285f);color:white}
+.diagramHero{height:420px;position:relative;border-radius:36px;background:linear-gradient(135deg,#071029,#0b2a6f 58%,#16b5e8);overflow:hidden;box-shadow:var(--shadow)}.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5}.o1{width:260px;height:260px;background:#e7bb32;right:-60px;top:-40px}.o2{width:170px;height:170px;background:#16b5e8;left:30px;bottom:40px}.o3{width:120px;height:120px;background:#ef1d3b;right:120px;bottom:45px}.node{position:absolute;background:rgba(255,255,255,.9);border-radius:18px;padding:15px 18px;font-weight:950;box-shadow:0 12px 26px rgba(0,0,0,.16)}.n1{left:40px;top:60px}.n2{right:40px;top:92px}.n3{left:45%;top:45%}.n4{left:70px;bottom:70px}.n5{right:50px;bottom:60px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.compare>div{border-radius:26px;padding:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}.compare>div:nth-child(2){border-top:8px solid var(--green)}
+.matrix{width:100%;border-collapse:separate;border-spacing:0 10px}.matrix th{text-align:left;color:#344054;font-size:15px;text-transform:uppercase;letter-spacing:.06em}.matrix td{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px;font-size:18px}.matrix td:first-child{border-left:1px solid var(--line);border-radius:14px 0 0 14px;font-weight:950}.matrix td:last-child{border-right:1px solid var(--line);border-radius:0 14px 14px 0}
+.timeline,.flow{display:flex;gap:14px;align-items:stretch;justify-content:space-between}.timeline div,.flow span{flex:1;background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;text-align:center;font-weight:950;box-shadow:var(--shadow)}.timeline b{display:grid;place-items:center;width:42px;height:42px;background:var(--navy);color:white;border-radius:14px;margin:0 auto 10px}
+input,select,textarea{width:100%;border:1px solid #d8dee9;border-radius:15px;padding:13px 14px;font:inherit;background:#fff;margin:6px 0 12px}textarea{min-height:100px;resize:vertical}label{font-weight:900;color:#344054;display:block}
+button,.btn{border:0;border-radius:14px;background:var(--navy);color:#fff;padding:12px 16px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}button:hover,.btn:hover{transform:translateY(-1px) scale(1.02)}.secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}.gold{background:var(--gold);color:#111827}.green{background:var(--green)}.red{background:var(--red)}
+.caseCard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}.decisionGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.decisionGrid button{min-height:120px;font-size:23px}.videoEmbed{border-radius:26px;overflow:hidden;background:#0b1027;box-shadow:var(--shadow);aspect-ratio:16/9}.videoEmbed iframe{width:100%;height:100%;border:0}.checklist label,.quizItem label{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:9px 0;display:block;font-size:18px;box-shadow:0 6px 14px rgba(15,23,42,.05)}.feedback{border-radius:16px;padding:14px 16px;margin-top:14px;font-weight:850}.ok{background:#e8f7ef;color:#075e30;border:1px solid #bfe8cd}.warn{background:#fff5d9;color:#7b4b00;border:1px solid #f4d27a}.bad{background:#fde8ea;color:#8b1823;border:1px solid #f2b9bf}
+.canvasGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.canvasGrid>div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow)}.rubric{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.rubric>div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.sources a{color:#0b4a6f;text-decoration:underline;font-weight:800}.closingTitle{font-size:64px}.bigActions .btn{font-size:19px;padding:16px 22px}
+.footerNav{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:999px;padding:10px 14px;box-shadow:var(--shadow);z-index:12}.footerNav button{width:48px;height:48px;border-radius:50%;padding:0}.counter{font-weight:950;color:#344054;min-width:76px;text-align:center}.sideDots{position:absolute;right:18px;top:110px;bottom:90px;display:flex;flex-direction:column;gap:6px;z-index:10;overflow:auto}.dot{width:18px;height:18px;border:1px solid #b6c3d7;border-radius:50%;background:#fff;padding:0}.dot.active{background:var(--gold);border-color:#d8a900;transform:scale(1.15)}
+.modal{position:fixed;inset:0;background:rgba(7,11,36,.72);display:none;align-items:center;justify-content:center;z-index:99;padding:24px}.modal.show{display:flex}.modalBox{width:min(760px,96vw);max-height:82vh;overflow:auto;background:#fff;border-radius:28px;padding:26px;box-shadow:0 34px 80px rgba(0,0,0,.3)}.modalBox h3{font-size:30px}.modalClose{float:right;background:#f2f4f7;color:#111;border:1px solid var(--line)}
+@media(max-width:900px){.coverGrid,.grid2,.grid3,.videoGrid,.canvasGrid,.rubric{grid-template-columns:1fr}.slide{padding:105px 24px 90px}.topbar{left:12px;right:12px}.sideDots{display:none}.brand small{display:none}}
+
+.toolGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.toolCard{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px;text-decoration:none;color:var(--ink);box-shadow:0 8px 20px rgba(15,23,42,.07);transition:.18s}
+.toolCard:hover{transform:translateY(-2px) scale(1.015);border-color:#b8d8ff}
+.toolIcon{width:46px;height:46px;border-radius:14px;background:#f2f4f7;display:grid;place-items:center;flex:0 0 46px;font-weight:950;color:var(--navy)}
+.toolIcon img{width:30px;height:30px;object-fit:contain}
+.toolCard small{display:block;color:var(--muted);font-size:13px;line-height:1.25;margin-top:3px}
+.videoLinkGrid{display:grid;grid-template-columns:1fr;gap:14px}
+.videoLinkCard{display:flex;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:.18s}
+.videoLinkCard:hover{transform:translateY(-2px) scale(1.01);border-color:#f0c64d}
+.playIcon{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#ffdd67);display:grid;place-items:center;font-weight:950;color:#111;flex:0 0 58px}
+.aiSheetsBox{background:linear-gradient(135deg,#071029,#103d5b);color:#fff;border-radius:24px;padding:22px;box-shadow:var(--shadow);margin-top:16px}
+.aiSheetsBox code{background:rgba(255,255,255,.12);padding:3px 6px;border-radius:8px;color:#fff}
+@media(max-width:900px){.toolGrid{grid-template-columns:1fr}.videoLinkCard{align-items:flex-start}}
+
+</style></head>
+<body><div class="deck">
+<header class="topbar"><div class="brand"><img src="../assets/logos/codii-logo.png" alt="CODII"><div>Diseño Instruccional 5.0 con IA<small>Colegio de Doctores e Investigadores de Iberoamérica · Academia Universal</small></div></div><div class="moduleBadge">Módulo 3 · 16 horas</div></header>
+<div class="sideDots"><button class="dot" onclick="go(0)" title="1"></button><button class="dot" onclick="go(1)" title="2"></button><button class="dot" onclick="go(2)" title="3"></button><button class="dot" onclick="go(3)" title="4"></button><button class="dot" onclick="go(4)" title="5"></button><button class="dot" onclick="go(5)" title="6"></button><button class="dot" onclick="go(6)" title="7"></button><button class="dot" onclick="go(7)" title="8"></button><button class="dot" onclick="go(8)" title="9"></button><button class="dot" onclick="go(9)" title="10"></button><button class="dot" onclick="go(10)" title="11"></button><button class="dot" onclick="go(11)" title="12"></button><button class="dot" onclick="go(12)" title="13"></button><button class="dot" onclick="go(13)" title="14"></button><button class="dot" onclick="go(14)" title="15"></button><button class="dot" onclick="go(15)" title="16"></button><button class="dot" onclick="go(16)" title="17"></button><button class="dot" onclick="go(17)" title="18"></button><button class="dot" onclick="go(18)" title="19"></button><button class="dot" onclick="go(19)" title="20"></button><button class="dot" onclick="go(20)" title="21"></button><button class="dot" onclick="go(21)" title="22"></button><button class="dot" onclick="go(22)" title="23"></button><button class="dot" onclick="go(23)" title="24"></button><button class="dot" onclick="go(24)" title="25"></button><button class="dot" onclick="go(25)" title="26"></button><button class="dot" onclick="go(26)" title="27"></button><button class="dot" onclick="go(27)" title="28"></button></div>
+<section class="slide active" data-label="Portada">
+      <div class="slideInner">
+        <div class="sectionLabel">Portada</div>
+        <h2>Situaciones didácticas multinivel y simultáneas</h2>
+        <div class="slideContent">
+        <div class="coverGrid">
+          <div>
+            <span class="pill">Módulo 3 · 16 horas · Diseño Instruccional 5.0</span>
+            <h1>Situaciones didácticas multinivel y simultáneas</h1>
+            <p class="lead">Diseñar experiencias que atiendan diversidad, ritmos, niveles de desempeño y necesidades de apoyo sin fragmentar el sentido común del aprendizaje.</p>
+            <div class="tagrow"><span>DUA 3.0</span><span>diferenciación</span><span>simultaneidad didáctica</span><span>andamiaje</span><span>evidencia comparable</span></div>
+            <div class="callout"><b>Producto profesional:</b> Situación didáctica multinivel con rutas diferenciadas, simultáneas y evidencias comparables</div>
+          </div>
+          <div class="diagramHero">
+            <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+            <div class="node n1">Contexto</div><div class="node n2">Diseño</div><div class="node n3">IA</div><div class="node n4">Evidencia</div><div class="node n5">Mejora</div>
+          </div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Orientación">
+      <div class="slideInner">
+        <div class="sectionLabel">Orientación</div>
+        <h2>Resultados profesionales de aprendizaje</h2>
+        <div class="slideContent">
+        <div class="grid2">
+          <div class="card"><h3>Al finalizar, el participante sabrá hacer</h3><ul>
+            <li>Diagnosticar un problema formativo y traducirlo en decisiones de diseño.</li>
+            <li>Construir un producto aplicable a su contexto, asignatura o nivel.</li>
+            <li>Usar IA como asistente de codiseño con supervisión docente.</li>
+            <li>Definir evidencias, criterios, retroalimentación y trazabilidad.</li>
+          </ul></div>
+          <div class="card accent"><h3>No es teoría aislada</h3><p>El módulo está diseñado para que un profesional salga con una herramienta o prototipo que pueda usar, adaptar, vender, presentar o escalar.</p></div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Problematización">
+      <div class="slideInner">
+        <div class="sectionLabel">Problematización</div>
+        <h2>Problema profesional que resuelve el módulo</h2>
+        <div class="slideContent">
+        <div class="problemBox">
+          <h3>Escenario</h3>
+          <p>Un docente quiere innovar, pero solo agrega herramientas digitales. El resultado luce moderno, aunque no mejora la comprensión, la participación ni la evidencia del aprendizaje.</p>
+          <button onclick="openModal('Clave profesional','<p>La innovación instruccional no se mide por la cantidad de herramientas, sino por la coherencia entre intención, experiencia, evidencia y mejora.</p>')">Ampliar criterio</button>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Ruta">
+      <div class="slideInner">
+        <div class="sectionLabel">Ruta</div>
+        <h2>Mapa de arquitectura del módulo</h2>
+        <div class="slideContent">
+        <div class="timeline">
+          <div><b>1</b><span>Diagnóstico</span></div><div><b>2</b><span>Diseño</span></div><div><b>3</b><span>Simulación</span></div><div><b>4</b><span>Producto</span></div><div><b>5</b><span>Evaluación</span></div>
+        </div>
+        <p class="lead smallLead">Cada bloque conduce a una decisión de diseño. No avance leyendo: avance construyendo.</p></div>
+      </div>
+    </section><section class="slide " data-label="Concepto">
+      <div class="slideInner">
+        <div class="sectionLabel">Concepto</div>
+        <h2>Concepto base: del recurso al ecosistema</h2>
+        <div class="slideContent">
+        <div class="compare">
+          <div><h3>Diseño tradicional</h3><p>Parte de contenidos, actividades sueltas y evaluaciones finales.</p></div>
+          <div><h3>Diseño 5.0</h3><p>Parte de problemas, usuarios, evidencias, datos, mejora y certificación.</p></div>
+        </div>
+        <button onclick="openModal('Ecosistema 5.0','<p>Un ecosistema formativo articula contenido, interacción, datos, evaluación, evidencias y validación. Su valor no está en una página bonita, sino en la experiencia completa.</p>')">Ver ampliación</button></div>
+      </div>
+    </section><section class="slide " data-label="Modelo">
+      <div class="slideInner">
+        <div class="sectionLabel">Modelo</div>
+        <h2>Matriz de decisiones instruccionales</h2>
+        <div class="slideContent">
+        <table class="matrix"><tr><th>Decisión</th><th>Pregunta crítica</th><th>Salida esperada</th></tr>
+        <tr><td>Contexto</td><td>¿Quién aprende y bajo qué condiciones?</td><td>Perfil de audiencia</td></tr>
+        <tr><td>Resultado</td><td>¿Qué debe saber hacer?</td><td>Resultado observable</td></tr>
+        <tr><td>Actividad</td><td>¿Qué experiencia provoca aprendizaje?</td><td>Secuencia o reto</td></tr>
+        <tr><td>Evidencia</td><td>¿Cómo se comprobará el desempeño?</td><td>Producto verificable</td></tr>
+        <tr><td>Mejora</td><td>¿Qué datos permitirán mejorar?</td><td>Indicadores y retroalimentación</td></tr></table></div>
+      </div>
+    </section><section class="slide " data-label="Simulación">
+      <div class="slideInner">
+        <div class="sectionLabel">Simulación</div>
+        <h2>Simulación 1: elija su contexto</h2>
+        <div class="slideContent">
+        <div class="simBox">
+          <h3>Diseñe como consultor</h3>
+          <label>Nivel educativo</label><select id="simLevel"><option>Educación Inicial</option><option>EGB/BGU</option><option>Educación Superior/Posgrado</option><option>Asignatura experimental</option><option>Formación corporativa</option></select>
+          <label>Necesidad dominante</label><select id="simNeed"><option>Baja participación</option><option>Evaluación poco clara</option><option>Necesidad de práctica/simulación</option><option>Diversidad de niveles</option><option>Falta de trazabilidad</option></select>
+          <label>Tipo de producto</label><select id="simProduct"><option>Plan didáctico</option><option>Situación didáctica</option><option>Rúbrica</option><option>Simulación</option><option>Ecosistema certificable</option></select>
+          <button onclick="runSimulation()">Generar recomendación</button>
+          <div id="simOutput" class="feedback warn">Seleccione opciones y genere una recomendación profesional.</div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="IA supervisada">
+      <div class="slideInner">
+        <div class="sectionLabel">IA supervisada</div>
+        <h2>Criterios para tomar decisiones con IA</h2>
+        <div class="slideContent">
+        <div class="grid3">
+          <div class="card"><h3>1. Situar</h3><p>La IA necesita contexto, nivel, audiencia y restricciones.</p></div>
+          <div class="card"><h3>2. Auditar</h3><p>Todo producto generado debe revisarse con criterios pedagógicos.</p></div>
+          <div class="card"><h3>3. Trazar</h3><p>La decisión debe poder explicarse y mejorar con evidencias.</p></div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Laboratorio">
+      <div class="slideInner">
+        <div class="sectionLabel">Laboratorio</div>
+        <h2>Constructor de prompt docente</h2>
+        <div class="slideContent">
+        <div class="promptLab">
+          <label>Contexto educativo</label><input id="pContext" placeholder="Ej.: Maestría en Tecnología e Innovación Educativa, modalidad híbrida">
+          <label>Resultado de aprendizaje</label><input id="pOutcome" placeholder="Ej.: diseñar una rúbrica analítica para evaluar un producto digital">
+          <label>Restricciones</label><input id="pLimits" placeholder="Ej.: 80 minutos, estudiantes adultos, enfoque práctico, evidencia verificable">
+          <button onclick="buildPrompt()">Construir prompt</button><button class="secondary" onclick="copyPrompt()">Copiar</button>
+          <textarea id="promptOut" placeholder="Aquí se generará el prompt profesional..."></textarea>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Casos">
+      <div class="slideInner">
+        <div class="sectionLabel">Casos</div>
+        <h2>Caso aplicado: Educación Inicial</h2>
+        <div class="slideContent">
+        <div class="caseFocus"><h3>Educación Inicial</h3><p>Una misma experiencia de exploración de sonidos con tres rutas: reconocimiento, clasificación y creación de patrón sonoro.</p><button onclick="openModal('Transferencia al aula','<p>Identifique el resultado observable, la mediación del docente, la evidencia y el criterio de retroalimentación.</p>')">Transferir</button></div></div>
+      </div>
+    </section><section class="slide " data-label="Casos">
+      <div class="slideInner">
+        <div class="sectionLabel">Casos</div>
+        <h2>Caso aplicado: EGB / Bachillerato</h2>
+        <div class="slideContent">
+        <div class="caseFocus"><h3>EGB/BGU</h3><p>Estudio de caso histórico con roles diferenciados: lector crítico, analista de fuentes, relator visual y moderador.</p><button onclick="openModal('Decisión instruccional','<p>¿Qué recurso interactivo agregaría y qué evidencia permitiría demostrar comprensión, no solo participación?</p>')">Decidir</button></div></div>
+      </div>
+    </section><section class="slide " data-label="Casos">
+      <div class="slideInner">
+        <div class="sectionLabel">Casos</div>
+        <h2>Caso aplicado: Educación Superior y posgrado</h2>
+        <div class="slideContent">
+        <div class="caseFocus"><h3>Educación Superior / Posgrado</h3><p>Seminario de posgrado con rutas por nivel: síntesis, crítica metodológica y propuesta de rediseño.</p><button onclick="openModal('Exigencia de cuarto nivel','<p>En posgrado, el diseño debe exigir transferencia, argumentación, producción y mejora. No basta con responder preguntas cerradas.</p>')">Profundizar</button></div></div>
+      </div>
+    </section><section class="slide " data-label="Casos">
+      <div class="slideInner">
+        <div class="sectionLabel">Casos</div>
+        <h2>Caso aplicado: asignaturas experimentales o formación corporativa</h2>
+        <div class="slideContent">
+        <div class="grid2">
+          <div class="caseFocus"><h3>Asignaturas experimentales</h3><p>Simulación de fenómeno físico con niveles: observar, predecir, medir, modelar y explicar.</p></div>
+          <div class="caseFocus"><h3>Formación corporativa</h3><p>Entrenamiento por escenarios: novato resuelve procedimiento guiado; experto resuelve incidente complejo.</p></div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Recurso audiovisual">
+      <div class="slideInner">
+        <div class="sectionLabel">Recurso audiovisual</div>
+        <h2>Recurso externo de consulta</h2>
+        <div class="slideContent">
+          <div class="grid2">
+            <div class="card">
+              <h3>Material sugerido para profundizar</h3>
+              <p>Los videos no se incrustan para evitar fallos de reproducción en navegadores, permisos o publicación en GitHub Pages. Abra el recurso en una pestaña nueva y vuelva al módulo para resolver la consigna.</p>
+              <div class="videoLinkGrid">
+    <a class="videoLinkCard" href="https://aprendemosjuntos.bbva.com/especial/nunca-le-pidas-a-un-nino-que-te-preste-atencion-chema-lazaro/" target="_blank" rel="noopener">
+      <span class="playIcon">▶</span>
+      <span><b>Chema Lázaro · Nunca le pidas a un niño que te preste atención</b><small>Abrir recurso audiovisual externo en una pestaña nueva. Úselo como material de consulta y análisis profesional.</small></span>
+    </a></div>
+            </div>
+            <div class="card accent">
+              <h3>Consigna de análisis profesional</h3>
+              <ol>
+                <li>Extraiga una idea relevante para el diseño instruccional.</li>
+                <li>Conviértala en una decisión concreta para su nivel educativo o asignatura.</li>
+                <li>Defina qué evidencia demostraría que esa decisión mejora el aprendizaje.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div></section><section class="slide " data-label="Interacción">
+      <div class="slideInner">
+        <div class="sectionLabel">Interacción</div>
+        <h2>Estudio interactivo: decisiones críticas</h2>
+        <div class="slideContent">
+        <div class="decisionGrid">
+          <button onclick="openModal('Decisión 1 · Pertinencia','<p>La pertinencia exige que el diseño responda a una necesidad formativa real, no a una moda tecnológica.</p>')">Pertinencia</button>
+          <button onclick="openModal('Decisión 2 · Evidencia','<p>Una evidencia útil permite observar desempeño, proceso, criterio y posibilidad de mejora.</p>')">Evidencia</button>
+          <button onclick="openModal('Decisión 3 · Retroalimentación','<p>Retroalimentar no es corregir al final: es orientar el avance durante el proceso.</p>')">Retroalimentación</button>
+          <button onclick="openModal('Decisión 4 · Escalabilidad','<p>Un diseño escalable puede replicarse, adaptarse y sostenerse sin perder calidad.</p>')">Escalabilidad</button>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Checklist">
+      <div class="slideInner">
+        <div class="sectionLabel">Checklist</div>
+        <h2>Auditoría rápida de calidad</h2>
+        <div class="slideContent">
+        <div class="checklist">
+          <label><input type="checkbox" onchange="updateAudit()"> El resultado de aprendizaje es observable.</label>
+          <label><input type="checkbox" onchange="updateAudit()"> La actividad exige producción, no solo consumo.</label>
+          <label><input type="checkbox" onchange="updateAudit()"> La evidencia se vincula con criterios explícitos.</label>
+          <label><input type="checkbox" onchange="updateAudit()"> La IA se usa con supervisión y propósito.</label>
+          <label><input type="checkbox" onchange="updateAudit()"> El diseño considera diversidad, acceso y retroalimentación.</label>
+          <div id="auditOut" class="feedback warn">Marque los criterios para estimar la calidad del diseño.</div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Escalabilidad">
+      <div class="slideInner">
+        <div class="sectionLabel">Escalabilidad</div>
+        <h2>Matriz de escalabilidad</h2>
+        <div class="slideContent">
+        <table class="matrix"><tr><th>Elemento</th><th>Versión mínima</th><th>Versión premium</th></tr>
+        <tr><td>Contenido</td><td>Texto o presentación</td><td>Clase interactiva con decisiones y evidencias</td></tr>
+        <tr><td>Actividad</td><td>Respuesta abierta</td><td>Producto + archivo + trazabilidad</td></tr>
+        <tr><td>Evaluación</td><td>Calificación final</td><td>Evaluación modular + retroalimentación + datos</td></tr>
+        <tr><td>Gestión</td><td>Manual</td><td>Sheets, Drive, Apps Script y validación</td></tr>
+        </table></div>
+      </div>
+    </section><section class="slide " data-label="Responsabilidad">
+      <div class="slideInner">
+        <div class="sectionLabel">Responsabilidad</div>
+        <h2>Ética, accesibilidad y sesgos</h2>
+        <div class="slideContent">
+        <div class="grid3">
+          <div class="card"><h3>Ética</h3><p>Declarar uso de IA, proteger datos y evitar automatismos opacos.</p></div>
+          <div class="card"><h3>Acceso</h3><p>Ofrecer múltiples formas de participar, producir y demostrar aprendizaje.</p></div>
+          <div class="card"><h3>Sesgo</h3><p>Revisar lenguaje, ejemplos, criterios y supuestos generados por IA.</p></div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Datos">
+      <div class="slideInner">
+        <div class="sectionLabel">Datos</div>
+        <h2>Datos y trazabilidad para mejorar</h2>
+        <div class="slideContent">
+        <div class="flow">
+          <span>Registro</span><span>Recursos</span><span>Actividad</span><span>Evaluación</span><span>Evidencia</span><span>Mejora</span>
+        </div>
+        <p>Un curso premium debe permitir responder: quién avanzó, qué revisó, qué produjo, cómo fue evaluado y qué mejora requiere.</p></div>
+      </div>
+    </section><section class="slide " data-label="Canvas">
+      <div class="slideInner">
+        <div class="sectionLabel">Canvas</div>
+        <h2>Canvas profesional del producto del módulo</h2>
+        <div class="slideContent">
+        <div class="canvasGrid">
+          <div><b>Contexto</b><textarea placeholder="Nivel, asignatura, modalidad"></textarea></div>
+          <div><b>Resultado</b><textarea placeholder="Qué debe saber hacer"></textarea></div>
+          <div><b>Actividad</b><textarea placeholder="Reto o experiencia"></textarea></div>
+          <div><b>Evidencia</b><textarea placeholder="Producto verificable"></textarea></div>
+          <div><b>Evaluación</b><textarea placeholder="Criterios o rúbrica"></textarea></div>
+          <div><b>Mejora</b><textarea placeholder="Datos, retroalimentación, iteración"></textarea></div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Laboratorio">
+      <div class="slideInner">
+        <div class="sectionLabel">Laboratorio</div>
+        <h2>Laboratorio: rediseño de una práctica tradicional</h2>
+        <div class="slideContent">
+        <div class="labBox">
+          <h3>Transforme una práctica</h3>
+          <p>Escriba una actividad tradicional y conviértala en una experiencia 5.0.</p>
+          <textarea id="oldPractice" placeholder="Ej.: explicar el tema y tomar una prueba..."></textarea>
+          <button onclick="redesignPractice()">Rediseñar</button>
+          <div id="redesignOut" class="feedback warn">El sistema propondrá una ruta de rediseño.</div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Simulación">
+      <div class="slideInner">
+        <div class="sectionLabel">Simulación</div>
+        <h2>Simulación 2: decisiones de mejora</h2>
+        <div class="slideContent">
+        <div class="scenario">
+          <p><b>Situación:</b> el estudiante completó el recurso, pero su evidencia es débil y no demuestra transferencia.</p>
+          <button onclick="scenarioFeedback('recurso')">Agregar más contenido</button>
+          <button onclick="scenarioFeedback('criterio')">Revisar criterios y ejemplo de evidencia</button>
+          <button onclick="scenarioFeedback('nota')">Bajar la nota sin retroalimentar</button>
+          <div id="scenarioOut" class="feedback warn">Seleccione una decisión.</div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Evaluación">
+      <div class="slideInner">
+        <div class="sectionLabel">Evaluación</div>
+        <h2>Mini evaluación formativa</h2>
+        <div class="slideContent">
+        <div class="quizPanel" data-answers='[0, 1, 0, 0]' data-feedback='["La clave es mantener propósito común y variar acceso, proceso, complejidad o producto.", "La simultaneidad se diseña; no se deja al azar.", "DUA busca acceso significativo y altas expectativas para todos.", "La IA es útil para producir variantes supervisadas, no para delegar la decisión pedagógica."]'>
+          <div class="quizItem"><h3>1. Una situación multinivel no significa:</h3><label><input type="radio" name="q0" value="0"> tres tareas inconexas</label><label><input type="radio" name="q0" value="1"> rutas diferenciadas hacia un propósito común</label><label><input type="radio" name="q0" value="2"> apoyos según necesidad</label><div class="miniFb" id="qfb0"></div></div><div class="quizItem"><h3>2. La simultaneidad didáctica requiere:</h3><label><input type="radio" name="q1" value="0"> improvisar grupos al azar</label><label><input type="radio" name="q1" value="1"> roles, tiempos, recursos y evidencias bien definidos</label><label><input type="radio" name="q1" value="2"> trabajar todos en silencio</label><div class="miniFb" id="qfb1"></div></div><div class="quizItem"><h3>3. El DUA ayuda porque:</h3><label><input type="radio" name="q2" value="0"> reduce barreras de acceso y participación</label><label><input type="radio" name="q2" value="1"> elimina toda exigencia</label><label><input type="radio" name="q2" value="2"> hace que todos hagan exactamente lo mismo</label><div class="miniFb" id="qfb2"></div></div><div class="quizItem"><h3>4. La IA puede apoyar generando:</h3><label><input type="radio" name="q3" value="0"> variantes de tarea y andamiajes</label><label><input type="radio" name="q3" value="1"> calificaciones sin criterio</label><label><input type="radio" name="q3" value="2"> reemplazos automáticos del docente</label><div class="miniFb" id="qfb3"></div></div>
+          <button onclick="gradeQuiz()">Calificar mini evaluación</button>
+          <div id="quizOut" class="feedback warn">Responda y verifique su comprensión antes de continuar.</div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Mejora">
+      <div class="slideInner">
+        <div class="sectionLabel">Mejora</div>
+        <h2>Retroalimentación experta: cómo mejorar el producto</h2>
+        <div class="slideContent">
+        <div class="grid2">
+          <div class="card"><h3>Preguntas de mejora</h3><ul><li>¿Qué evidencia demuestra transferencia?</li><li>¿Qué apoyo necesita quien inicia?</li><li>¿Qué reto adicional necesita quien avanza más rápido?</li><li>¿Qué datos permitirán rediseñar?</li></ul></div>
+          <div class="card accent"><h3>Principio de calidad</h3><p>Un producto premium se mejora por ciclos: diseñar, probar, recoger evidencia, interpretar datos y rediseñar.</p></div>
+        </div></div>
+      </div>
+    </section><section class="slide " data-label="Producto">
+      <div class="slideInner">
+        <div class="sectionLabel">Producto</div>
+        <h2>Criterios de entrega del producto</h2>
+        <div class="slideContent">
+        <div class="rubric">
+          <div><b>Insuficiente</b><p>Producto genérico, sin contexto ni evidencia clara.</p></div>
+          <div><b>Básico</b><p>Incluye estructura, pero con poca trazabilidad o criterios débiles.</p></div>
+          <div><b>Competente</b><p>Articula contexto, actividad, evidencia, evaluación y mejora.</p></div>
+          <div><b>Excelente</b><p>Es aplicable, escalable, inclusivo, auditable y defendible profesionalmente.</p></div>
+        </div>
+        <div class="callout"><b>Entrega esperada:</b> Situación didáctica multinivel con rutas diferenciadas, simultáneas y evidencias comparables</div></div>
+      </div>
+    </section>
+<section class="slide " data-label="Herramientas IA">
+  <div class="slideInner">
+    <div class="sectionLabel">Caja de herramientas</div>
+    <h2>Herramientas de apoyo para producir el producto del módulo</h2>
+    <div class="slideContent">
+      <p class="lead">Use estas plataformas como apoyo operativo. La herramienta no reemplaza el criterio docente: acelera ideación, diseño, producción, evaluación o visualización.</p>
+      <div class="toolGrid">
+        
+        <a class="toolCard" href="https://www.magicschool.ai/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=www.magicschool.ai&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='MA'"></span>
+          <span><b>MagicSchool</b><small>Herramientas de IA para docentes, planificación y recursos educativos.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://app.tututor.ai/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=app.tututor.ai&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='TU'"></span>
+          <span><b>TuTutor</b><small>Apoyo para tutoría, acompañamiento y generación de recursos docentes.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://app.genially.com/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=app.genially.com&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='GE'"></span>
+          <span><b>Genially</b><small>Creación de recursos interactivos, presentaciones y experiencias visuales.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://h5p.org/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=h5p.org&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='H5'"></span>
+          <span><b>H5P</b><small>Objetos interactivos, cuestionarios, videos interactivos y recursos embebibles.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://app.classpoint.io/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=app.classpoint.io&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='CL'"></span>
+          <span><b>ClassPoint</b><small>Interactividad en presentaciones y evaluación en vivo.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://www.canva.com/es_us/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=www.canva.com&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='CA'"></span>
+          <span><b>Canva</b><small>Diseño de recursos visuales, presentaciones, guías e infografías.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://edtk.co/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=edtk.co&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='ED'"></span>
+          <span><b>EDTK</b><small>Recursos para planeación, actividades y diseño educativo.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://chatgpt.com/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='CH'"></span>
+          <span><b>ChatGPT</b><small>IA conversacional para diseño, prompts, retroalimentación y análisis.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://gemini.google.com/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='GE'"></span>
+          <span><b>Gemini</b><small>Asistente de IA para ideación, síntesis, planificación y coedición.</small></span>
+        </a>
+
+        <a class="toolCard" href="https://www.napkin.ai/" target="_blank" rel="noopener">
+          <span class="toolIcon"><img src="https://www.google.com/s2/favicons?domain=www.napkin.ai&amp;sz=64" alt="" onerror="this.style.display='none';this.parentNode.textContent='NA'"></span>
+          <span><b>Napkin AI</b><small>Conversión de ideas en diagramas y visuales explicativos.</small></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-label="Fuentes">
+      <div class="slideInner">
+        <div class="sectionLabel">Fuentes</div>
+        <h2>Fuentes y consulta profesional</h2>
+        <div class="slideContent">
+        <div class="card"><h3>Fuentes curadas</h3><ul class="sources"><li><a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener">CAST. UDL Guidelines 3.0</a></li><li><a href="https://www.unesco.org/en/articles/ai-competency-framework-teachers" target="_blank" rel="noopener">UNESCO. AI competency framework for teachers</a></li><li><a href="https://aprendemosjuntos.bbva.com/especial/nunca-le-pidas-a-un-nino-que-te-preste-atencion-chema-lazaro/" target="_blank" rel="noopener">BBVA Aprendemos Juntos. Chema Lázaro</a></li></ul></div>
+        <p class="muted">Use estas fuentes para contrastar, profundizar y justificar decisiones de diseño en su producto.</p></div>
+      </div>
+    </section><section class="slide " data-label="Cierre">
+      <div class="slideInner">
+        <div class="sectionLabel">Cierre</div>
+        <h2>Cierre del módulo y navegación</h2>
+        <div class="slideContent">
+        <h1 class="closingTitle">Módulo 3 listo para transferencia</h1>
+        <p class="lead">Ahora convierta lo aprendido en evidencia: abra la actividad del módulo, cargue su producto y luego realice la evaluación modular.</p>
+        <div class="actions bigActions">
+          <a class="btn" href="../index.html#recursos">Volver al curso</a>
+          <a class="btn gold" href="../index.html#actividad-m3">Ir a actividad M3</a>
+          <a class="btn green" href="../index.html#evaluacion-m3">Ir a evaluación M3</a>
+        </div></div>
+      </div>
+    </section>
+<div class="footerNav"><button onclick="prev()">‹</button><div class="counter" id="count">1/28</div><button onclick="next()">›</button><button class="secondary" onclick="fullScreen()">Pantalla completa</button><a class="btn secondary" href="../index.html#recursos">Volver</a></div>
+<div class="modal" id="modal" onclick="if(event.target.id==='modal')closeModal()"><div class="modalBox"><button class="modalClose" onclick="closeModal()">Cerrar</button><h3 id="modalTitle"></h3><div id="modalBody"></div></div></div>
+</div><script>
+const SLIDES=[...document.querySelectorAll('.slide')];let current=0;
+function refresh(){SLIDES.forEach((s,i)=>s.classList.toggle('active',i===current));document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));document.getElementById('count').textContent=(current+1)+'/28';}
+function go(i){current=Math.max(0,Math.min(SLIDES.length-1,i));refresh();}
+function next(){go(current+1)}function prev(){go(current-1)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev();if(e.key==='f'||e.key==='F')fullScreen();});
+function fullScreen(){const el=document.documentElement;if(!document.fullscreenElement){el.requestFullscreen&&el.requestFullscreen();}else{document.exitFullscreen&&document.exitFullscreen();}}
+function openModal(t,html){document.getElementById('modalTitle').innerHTML=t;document.getElementById('modalBody').innerHTML=html;document.getElementById('modal').classList.add('show');}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+function runSimulation(){const l=document.getElementById('simLevel').value,n=document.getElementById('simNeed').value,p=document.getElementById('simProduct').value;document.getElementById('simOutput').className='feedback ok';document.getElementById('simOutput').innerHTML='<b>Recomendación:</b> para '+l+', priorice un '+p.toLowerCase()+' que responda a '+n.toLowerCase()+'. Defina una evidencia verificable, un criterio de calidad y una mejora basada en datos.';}
+function buildPrompt(){const c=document.getElementById('pContext').value||'[contexto]';const o=document.getElementById('pOutcome').value||'[resultado]';const l=document.getElementById('pLimits').value||'[restricciones]';document.getElementById('promptOut').value=`Actúa como diseñador instruccional experto en ECOSISTEMA 5.0. Contexto: ${c}. Resultado de aprendizaje: ${o}. Restricciones: ${l}. Diseña una propuesta con propósito, secuencia, recursos, actividad aplicada, evidencia, criterios de evaluación, apoyos diferenciados, uso responsable de IA y mejora basada en datos. Presenta el resultado en tabla y agrega una lista de verificación de calidad.`;}
+function copyPrompt(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('promptOut').value);openModal('Prompt copiado','<p>Puede pegarlo en su asistente de IA y luego auditar la respuesta con criterios pedagógicos.</p>');}
+function updateAudit(){const boxes=[...document.querySelectorAll('.checklist input')];const n=boxes.filter(b=>b.checked).length;const out=document.getElementById('auditOut');out.className='feedback '+(n>=4?'ok':n>=2?'warn':'bad');out.innerHTML='<b>'+n+'/5 criterios cumplidos.</b> '+(n>=4?'El diseño tiene base sólida; refine coherencia y evidencias.':n>=2?'Hay avances, pero requiere revisión de coherencia.':'El producto aún es débil; vuelva a resultados, evidencia y criterios.');}
+function redesignPractice(){const txt=document.getElementById('oldPractice').value||'actividad tradicional';document.getElementById('redesignOut').className='feedback ok';document.getElementById('redesignOut').innerHTML='<b>Rediseño sugerido:</b> convierta "'+txt.replace(/</g,'&lt;')+'" en un reto con contexto, decisión del estudiante, recurso interactivo, evidencia observable, criterios de calidad y retroalimentación formativa.';}
+function scenarioFeedback(type){const out=document.getElementById('scenarioOut');if(type==='criterio'){out.className='feedback ok';out.innerHTML='<b>Decisión experta:</b> revise el criterio, muestre un ejemplo de evidencia esperada y ofrezca retroalimentación accionable.';}else if(type==='recurso'){out.className='feedback warn';out.innerHTML='Agregar contenido puede ayudar, pero no resuelve por sí solo la debilidad de la evidencia.';}else{out.className='feedback bad';out.innerHTML='Bajar la nota sin retroalimentación no genera aprendizaje ni mejora del producto.';}}
+function gradeQuiz(){const answers=JSON.parse(document.querySelector('.quizPanel').dataset.answers);const feedback=JSON.parse(document.querySelector('.quizPanel').dataset.feedback);let ok=0;answers.forEach((a,i)=>{const v=document.querySelector('input[name="q'+i+'"]:checked');const fb=document.getElementById('qfb'+i);if(v&&Number(v.value)===a){ok++;fb.innerHTML='<span class="feedback ok">Correcto. '+feedback[i]+'</span>';}else{fb.innerHTML='<span class="feedback bad">Revise: '+feedback[i]+'</span>';}});const score=Math.round(ok/answers.length*100);const out=document.getElementById('quizOut');out.className='feedback '+(score>=70?'ok':'bad');out.innerHTML='<b>Resultado formativo: '+score+'/100.</b> '+(score>=70?'Puede continuar hacia la actividad modular.':'Revise los conceptos antes de avanzar.');}
+refresh();
+</script></body></html>

@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Diseño Instruccional 5.0 con Inteligencia Artificial</title><style>
+:root{--navy:#070b24;--blue:#0b2a6f;--cyan:#16b5e8;--gold:#e7bb32;--red:#ef1d3b;--green:#138a4a;--orange:#d99000;--bg:#f4f6fa;--card:#fff;--ink:#111827;--muted:#657082;--line:#e7eaf1;--shadow:0 20px 48px rgba(15,23,42,.12)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8fafc,#edf2f7);color:var(--ink)}a{text-decoration:none;color:inherit}.top{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.96);color:#fff;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px)}.top-inner{max-width:1280px;margin:auto;padding:14px 24px;display:flex;align-items:center;gap:18px;justify-content:space-between}.brand{display:flex;align-items:center;gap:14px}.brand img{height:54px;max-width:170px;object-fit:contain;background:#fff;border-radius:12px;padding:6px}.brand-title{font-weight:950;letter-spacing:.08em;text-transform:uppercase;line-height:1.1}.brand-title small{display:block;color:#d5d8e5;font-weight:600;letter-spacing:0;text-transform:none}.collab{display:flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:8px 14px;background:rgba(255,255,255,.08)}.collab img{height:38px;object-fit:contain}.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav button{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.nav button.active,.nav button:hover{background:#fff;color:var(--navy)}.hero{background:radial-gradient(circle at 82% 20%,rgba(22,181,232,.28),transparent 32%),linear-gradient(135deg,#070b24 0%,#11172f 58%,#103d5b 100%);color:#fff;padding:70px 24px}.hero-inner{max-width:1280px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}.eyebrow{display:inline-flex;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);border-radius:999px;padding:10px 14px;font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(42px,6.2vw,82px);line-height:.96;margin:24px 0 14px;letter-spacing:-.055em}.lead{font-size:clamp(18px,2vw,25px);line-height:1.35;color:#e7ecf8;max-width:980px}.authorBar{margin-top:24px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);border-radius:24px;padding:14px;display:flex;gap:14px;align-items:center;max-width:760px}.authorBar img{width:66px;height:66px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.75)}.hero-card{background:#fff;color:var(--ink);border-radius:30px;padding:24px;box-shadow:var(--shadow)}.videoShell{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;background:linear-gradient(135deg,#fff,#f7f0e7);border:1px solid var(--line);border-radius:24px;padding:16px}.videoFrame{aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#111;border:5px solid #0dd3ff;box-shadow:0 0 0 4px rgba(231,187,50,.8)}.videoFrame video{width:100%;height:100%;object-fit:cover}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}.stat{border:1px solid var(--line);border-radius:18px;padding:14px;background:#f8fafc}.stat b{font-size:28px}.container{max-width:1280px;margin:auto;padding:30px 24px 80px}.layout{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start}.panel,.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow)}.panel{position:sticky;top:92px}.progressLabel{display:flex;justify-content:space-between;color:#5f6673;font-weight:900;font-size:13px;margin:8px 0}.bar{height:12px;background:#edf0f6;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));transition:.25s}.statusRow{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:10px 0}.badge{border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;letter-spacing:.04em;text-transform:uppercase}.pending{background:#fff5d9;color:#7b4b00;border:1px solid #f4d27a}.done{background:#e8f7ef;color:#075e30;border:1px solid #bfe8cd}.locked{background:#f1f3f6;color:#667085;border:1px solid #d9dde5}.section{display:none}.section.active{display:block}h2{font-size:34px;line-height:1.1;margin:0 0 14px;letter-spacing:-.03em}h3{margin:0 0 10px;font-size:22px}p{font-size:17px;line-height:1.55}.muted{color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.module{border:1px solid var(--line);border-radius:24px;background:#fff;overflow:hidden;box-shadow:0 14px 32px rgba(15,23,42,.08)}.moduleHead{height:8px;background:linear-gradient(90deg,var(--navy),var(--gold))}.moduleBody{padding:20px}.modNum{display:grid;place-items:center;width:48px;height:48px;background:#070b24;color:#fff;border-radius:16px;font-weight:950;margin-bottom:12px}.module.disabled{opacity:.52;filter:grayscale(.8)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}button,.btn{border:0;border-radius:14px;background:var(--navy);color:#fff;padding:12px 14px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}button.secondary,.btn.secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}button.gold{background:var(--gold);color:#111827}button.green{background:var(--green)}button.red{background:var(--red)}button:disabled{opacity:.45;cursor:not-allowed}input,textarea,select{width:100%;border:1px solid #d8dee9;border-radius:15px;padding:13px 14px;font:inherit;background:#fff}textarea{min-height:120px;resize:vertical}label{font-weight:900;font-size:14px;display:block;margin:12px 0 6px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.tabs button{background:#fff;color:#111827;border:1px solid var(--line)}.tabs button.active{background:var(--navy);color:#fff}.resourceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.quizBox{border:1px solid var(--line);border-radius:20px;padding:16px;margin:12px 0;background:#fff}.quizBox strong{display:block;margin-bottom:8px}.quizBox label{font-weight:650;margin:8px 0;background:#f8fafc;border:1px solid #e7eaf1;border-radius:12px;padding:10px}.feedback{border-radius:16px;padding:14px 16px;margin-top:12px;font-weight:800}.feedback.ok{background:#e8f7ef;color:#075e30;border:1px solid #bfe8cd}.feedback.warn{background:#fff5d9;color:#7b4b00;border:1px solid #f4d27a}.feedback.bad{background:#fde8ea;color:#8b1823;border:1px solid #f2b9bf}.author-layout{display:grid;grid-template-columns:360px 1fr;gap:22px;align-items:start}.author-avatar{width:118px;height:118px;border-radius:50%;object-fit:cover;object-position:top center;border:4px solid #eef1f7;display:block;margin:0 auto 14px}.gallery{height:420px;overflow:hidden;border-radius:22px;background:#111;position:relative}.gallery-track{display:flex;height:100%;transition:transform .7s ease}.gallery-item{min-width:100%;height:100%;display:grid;place-items:center;position:relative}.gallery-item img{max-width:100%;max-height:100%;object-fit:contain;animation:zoom 7s ease-in-out infinite}.gallery-caption{position:absolute;left:14px;right:14px;bottom:12px;background:rgba(7,11,36,.83);color:#fff;border-radius:14px;padding:10px 12px;font-weight:900}@keyframes zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}.certPreview{border:10px solid #0b2a6f;background:#fff;border-radius:22px;padding:28px;text-align:center;box-shadow:var(--shadow)}.small{font-size:13px}
+.paymentRibbon{max-width:1280px;margin:0 auto 18px;transform:translateY(-34px);padding:0 24px}.paymentRibbonInner{background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(255,248,220,.95));border:1px solid rgba(231,187,50,.45);border-radius:28px;box-shadow:0 22px 60px rgba(7,11,36,.18);display:grid;grid-template-columns:1.2fr auto;gap:18px;align-items:center;padding:18px 22px}.pulseDot{width:12px;height:12px;background:#13b96a;border-radius:999px;display:inline-block;margin-right:8px;box-shadow:0 0 0 0 rgba(19,185,106,.65);animation:pulse 1.8s infinite}.paymentRibbon h3{margin:0 0 5px;font-size:22px}.paymentRibbon p{margin:0;color:#4b5563}.priceChip{display:inline-flex;align-items:center;gap:8px;background:#070b24;color:#fff;border-radius:999px;padding:10px 16px;font-weight:950}.priceChip b{font-size:22px;color:var(--gold)}.payActions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.payActions .paypalBtn{background:#ffc439;color:#111827}.payActions .whatsBtn{background:#25d366;color:#062d16}.payActions .bankBtn{background:#fff;color:#070b24;border:1px solid #e5e7eb}.floatWhats{position:fixed;right:22px;bottom:22px;z-index:120;display:flex;align-items:center;gap:10px;background:#25d366;color:#052e16;border-radius:999px;padding:12px 16px;font-weight:950;box-shadow:0 18px 42px rgba(37,211,102,.38);border:2px solid rgba(255,255,255,.75);animation:floatPulse 2.6s infinite}.floatWhats .waIcon{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:22px}.floatWhats span small{display:block;font-size:11px;opacity:.84}.payModal{position:fixed;inset:0;background:rgba(7,11,36,.68);backdrop-filter:blur(8px);z-index:130;display:none;align-items:center;justify-content:center;padding:20px}.payModal.active{display:flex}.payModalBox{width:min(1080px,96vw);max-height:92vh;overflow:auto;background:#fff;border-radius:30px;box-shadow:0 28px 80px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.28)}.payModalHead{background:linear-gradient(135deg,#070b24,#123f64);color:#fff;padding:24px;border-radius:30px 30px 0 0;display:flex;align-items:center;justify-content:space-between;gap:18px}.payModalHead h2{margin:0;color:#fff}.closePay{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);width:42px;height:42px;border-radius:50%;padding:0}.payModalBody{padding:22px}.payGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.payCard{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 16px 36px rgba(15,23,42,.08)}.payCard .payCardTop{padding:16px;background:linear-gradient(135deg,#f8fafc,#fff7df)}.payCard img{width:100%;height:240px;object-fit:cover;object-position:center}.payCard p{font-size:15px}.bankFacts{display:grid;gap:8px;font-size:14px}.bankFacts div{background:#f8fafc;border:1px solid #e7eaf1;border-radius:12px;padding:9px}.copyBtn{background:#fff;color:#070b24;border:1px solid var(--line);padding:9px 10px}.certPaymentPanel{margin:18px auto;max-width:980px;text-align:left;background:linear-gradient(135deg,#fff,#fff7df);border:1px solid rgba(231,187,50,.5);border-radius:24px;padding:20px;box-shadow:0 12px 28px rgba(15,23,42,.08)}.certPaymentPanel h3{display:flex;align-items:center;gap:9px}.miniPayGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.miniPay{border:1px solid #e7eaf1;border-radius:18px;background:#fff;padding:14px}.footerCredits{max-width:1280px;margin:0 auto;padding:28px 24px 40px}.footerCreditsInner{background:linear-gradient(135deg,#070b24,#11172f);color:#fff;border-radius:28px;padding:24px;display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:center;box-shadow:0 22px 60px rgba(7,11,36,.20)}.footerCredits img{height:52px;max-width:190px;object-fit:contain;background:#fff;border-radius:12px;padding:6px}.footerCredits p{margin:5px 0;color:#d9deec}.footerLogos{display:flex;gap:12px;justify-content:flex-end;align-items:center;flex-wrap:wrap}.commercialBadge{display:inline-flex;align-items:center;gap:8px;background:rgba(231,187,50,.16);color:#fff;border:1px solid rgba(231,187,50,.35);border-radius:999px;padding:8px 12px;font-weight:900}.hero .paypalHero{background:#ffc439;color:#111827}.hero .whatsHero{background:#25d366;color:#062d16}.hero .bankHero{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}@keyframes pulse{70%{box-shadow:0 0 0 14px rgba(19,185,106,0)}100%{box-shadow:0 0 0 0 rgba(19,185,106,0)}}
+.section{scroll-margin-top:112px}.courseIntro{position:relative;overflow:hidden}.courseIntro:before{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(231,187,50,.22),transparent 68%)}.courseBadge,.commercialBadge{display:inline-flex;align-items:center;gap:8px;background:#070b24;color:#fff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:950;letter-spacing:.07em;text-transform:uppercase}.infoBlock{border:1px solid var(--line);background:linear-gradient(135deg,#fff,#f7f9fe);border-radius:20px;padding:16px}.infoBlock.mini{margin-top:14px}.infoBlock.mini p{margin:6px 0 0}.outcomeGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}.outcomeGrid div{border:1px solid var(--line);border-radius:18px;background:#fff;padding:15px;box-shadow:0 10px 20px rgba(15,23,42,.05)}.outcomeGrid b{display:block;color:var(--blue);font-size:18px;margin-bottom:6px}.outcomeGrid span{display:block;color:var(--muted);line-height:1.45}.startGrid{margin-top:18px}.preRegCard{background:linear-gradient(135deg,#fffdf6,#ffffff)}.preRegCard h2{margin-top:12px}.preRegCard select{background:#fff}.paymentRibbon{scroll-margin-top:120px}.floatWhats{background:#25d366;color:#fff}.floatWhats .waIcon{background:#fff;color:#25d366}.waIcon svg{width:24px;height:24px;display:block}.footerCredits{margin-top:30px}.nav button{transition:.18s ease}.nav button:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid rgba(231,187,50,.45);outline-offset:2px}
+@media(max-width:980px){.outcomeGrid{grid-template-columns:1fr}.startGrid{grid-template-columns:1fr}}
+@keyframes floatPulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:920px){.hero-inner,.layout,.grid2,.grid3,.modules,.resourceGrid,.author-layout{grid-template-columns:1fr}.top-inner{display:block}.nav{margin-top:12px;justify-content:flex-start}.panel{position:relative;top:auto}.videoShell{grid-template-columns:1fr}}
+@media(max-width:920px){.paymentRibbon{transform:none;margin-top:14px}.paymentRibbonInner,.payGrid,.miniPayGrid,.footerCreditsInner{grid-template-columns:1fr}.payActions,.footerLogos{justify-content:flex-start}.floatWhats{left:14px;right:14px;justify-content:center}.payCard img{height:190px}}
+
+.proofBox{margin-top:18px;border:1px solid rgba(231,187,50,.55);background:linear-gradient(135deg,#fffdf3,#ffffff);border-radius:24px;padding:18px;box-shadow:0 12px 28px rgba(15,23,42,.08)}
+.proofGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.proofGrid .full{grid-column:1/-1}.proofHelp{font-size:13px;color:#657082;margin-top:6px}.paymentStatusPill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-weight:950;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.paymentStatusPill.pending{background:#fff5d9;color:#7b4b00;border:1px solid #f4d27a}.paymentStatusPill.valid{background:#e8f7ef;color:#075e30;border:1px solid #bfe8cd}.paymentStatusPill.none{background:#f1f3f6;color:#667085;border:1px solid #d9dde5}.premiumBankImg{height:260px!important;object-fit:cover!important;object-position:center!important;background:#0b1220}.payCard.featured{border:2px solid rgba(231,187,50,.62)}
+.adminNote{margin-top:14px;border-left:5px solid #0b2a6f;background:#f4f7ff;border-radius:16px;padding:12px 14px;color:#344054}.paymentWorkflow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.paymentWorkflow div{border:1px solid #e7eaf1;border-radius:16px;background:#fff;padding:12px}.paymentWorkflow b{display:block;color:#0b2a6f;margin-bottom:4px}@media(max-width:920px){.proofGrid,.paymentWorkflow{grid-template-columns:1fr}.premiumBankImg{height:210px!important}}
+
+.moduleDock{position:sticky;top:84px;z-index:45;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #e7eaf1;box-shadow:0 10px 26px rgba(15,23,42,.06)}
+.moduleDockInner{max-width:1280px;margin:auto;padding:10px 24px;display:flex;gap:8px;align-items:center;overflow:auto}.moduleDockTitle{font-size:12px;font-weight:950;color:#344054;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;margin-right:5px}.modPill{white-space:nowrap;border:1px solid #d9dde5;background:#fff;color:#111827;border-radius:999px;padding:9px 12px;font-weight:950;font-size:13px;display:inline-flex;gap:7px;align-items:center}.modPill.available{border-color:#f4d27a;background:#fff8e2;color:#7b4b00}.modPill.done{border-color:#bfe8cd;background:#e8f7ef;color:#075e30}.modPill.locked{background:#f1f3f6;color:#667085}.modPill.pay{background:#070b24;color:#fff;border-color:#070b24}.accessGuide{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.accessGuide .stepAccess{border:1px solid #e7eaf1;background:#fff;border-radius:18px;padding:14px}.stepAccess b{display:flex;align-items:center;gap:8px;color:#0b2a6f;margin-bottom:6px}.stepAccess span{color:#657082;font-size:14px;line-height:1.35}.accessMode{border:1px solid rgba(231,187,50,.5);background:linear-gradient(135deg,#fff7df,#fff);border-radius:18px;padding:12px;margin-top:12px}.miniProgress{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.miniProgress .miniMod{border:1px solid #e7eaf1;border-radius:14px;padding:9px;text-align:center;font-size:12px;font-weight:950}.miniMod.done{background:#e8f7ef;color:#075e30}.miniMod.open{background:#fff5d9;color:#7b4b00}.miniMod.locked{background:#f1f3f6;color:#667085}.paymentAccessBanner{border:1px solid rgba(19,185,106,.28);background:linear-gradient(135deg,#e8f7ef,#fff);border-radius:20px;padding:14px;margin:14px 0}.paymentAccessBanner b{color:#075e30}.methodCards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}.methodCard{border:1px solid #e7eaf1;border-radius:22px;background:#fff;padding:18px;box-shadow:0 12px 30px rgba(15,23,42,.07)}.methodCard h3{margin-bottom:6px}.calloutSafe{border-left:5px solid #0b2a6f;background:#f4f7ff;border-radius:16px;padding:14px;margin:16px 0;color:#344054}.whatsappTrust{display:flex;align-items:center;gap:10px;border:1px solid #bfe8cd;background:#e8f7ef;color:#075e30;border-radius:18px;padding:12px;margin-top:12px;font-weight:900}.whatsappTrust svg{width:26px;height:26px;color:#25d366}.panelGuide{font-size:12px;color:#657082;margin-top:8px;line-height:1.35}
+@media(max-width:920px){.moduleDock{top:auto}.accessGuide,.methodCards,.miniProgress{grid-template-columns:1fr}.moduleDockInner{padding:10px 14px}}
+
+
+/* ===== V16 UX: encuadre comercial, semaforización y flujo modular ===== */
+.paymentRibbon{transform:none;margin:20px auto 24px;padding:0 24px}.paymentRibbonInner{display:block;border-radius:30px;padding:20px 22px;background:linear-gradient(135deg,#ffffff 0%,#fff9e8 55%,#effaf4 100%);border:1px solid rgba(231,187,50,.55)}.paymentRibbonInner>div:first-child{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}.paymentRibbonInner h3{font-size:clamp(22px,2.2vw,30px);line-height:1.1;margin:0 0 8px;max-width:680px}.paymentRibbonInner p{max-width:780px}.paymentRibbon .payActions{margin-top:16px;justify-content:flex-start}.priceChip{box-shadow:0 10px 24px rgba(7,11,36,.16)}
+.commercialHeroBox{border:1px solid rgba(231,187,50,.50);background:linear-gradient(135deg,#fffdf3,#ffffff 54%,#ecfff4);border-radius:26px;padding:18px;margin:14px 0 18px;box-shadow:0 14px 32px rgba(15,23,42,.08)}.commercialHeroBox h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:24px}.commercialHeroBox .payActions{justify-content:flex-start;margin-top:14px}.commercialHeroBox p{margin:0;color:#4b5563}
+.module{transition:.22s ease;position:relative}.module.availableCard{border-color:#91ddb0;box-shadow:0 18px 44px rgba(19,138,74,.14)}.module.availableCard .moduleHead{background:linear-gradient(90deg,#138a4a,#31c66d)}.module.availableCard .modNum{background:#138a4a;box-shadow:0 0 0 5px rgba(19,138,74,.12)}.module.completedCard{border-color:#8fc7ff;box-shadow:0 18px 44px rgba(11,42,111,.14)}.module.completedCard .moduleHead{background:linear-gradient(90deg,#0b2a6f,#16b5e8)}.module.completedCard .modNum{background:#0b2a6f}.module.disabled.lockedCard{opacity:.55;filter:grayscale(.75)}.module .badge.availableBadge{background:#e8f7ef;color:#075e30;border:1px solid #bfe8cd}.module .badge.done{background:#e5f0ff;color:#0b2a6f;border:1px solid #b9d9ff}.module .badge.locked{background:#f1f3f6;color:#667085;border:1px solid #d9dde5}.module.availableCard:after{content:"Disponible";position:absolute;right:14px;top:16px;background:#138a4a;color:#fff;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.module.completedCard:after{content:"Aprobado";position:absolute;right:14px;top:16px;background:#0b2a6f;color:#fff;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.modPill.available{border-color:#bfe8cd;background:#e8f7ef;color:#075e30;box-shadow:0 8px 20px rgba(19,138,74,.10)}.modPill.done{border-color:#b9d9ff;background:#e5f0ff;color:#0b2a6f}.miniMod.open{background:#e8f7ef!important;color:#075e30!important;border-color:#bfe8cd!important}.miniMod.done{background:#e5f0ff!important;color:#0b2a6f!important;border-color:#b9d9ff!important}
+.flowSummary{border:1px solid #dce7f8;background:linear-gradient(135deg,#f7fbff,#ffffff);border-radius:22px;padding:14px;margin:14px 0 18px;display:grid;grid-template-columns:.9fr 1.4fr;gap:14px;align-items:center}.flowSummary b{display:block;color:#0b2a6f;font-size:16px}.flowSummary span{display:block;color:#657082;font-size:13px;line-height:1.35}.flowSteps{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}.flowStep{border:1px solid #e7eaf1;background:#fff;border-radius:14px;padding:9px;text-align:center;font-weight:950;font-size:12px;line-height:1.15}.flowStep small{display:block;font-size:10px;margin-top:3px;text-transform:uppercase;letter-spacing:.04em}.flowStep.locked{background:#f1f3f6;color:#667085}.flowStep.available{background:#e8f7ef;color:#075e30;border-color:#bfe8cd}.flowStep.done{background:#e5f0ff;color:#0b2a6f;border-color:#b9d9ff}.flowStep.current{box-shadow:0 0 0 3px rgba(231,187,50,.28);border-color:#e7bb32}
+@media(max-width:920px){.paymentRibbonInner>div:first-child,.flowSummary{display:block}.flowSteps{grid-template-columns:repeat(3,1fr);margin-top:12px}.module.availableCard:after,.module.completedCard:after{position:static;display:inline-block;margin:10px 0 0}.paymentRibbon .payActions{display:grid;grid-template-columns:1fr;}.paymentRibbon .payActions>*{width:100%}}
+
+
+.activityUploadBox{margin-top:14px;border:1px dashed #b9c4d6;background:linear-gradient(135deg,#f8fbff,#ffffff);border-radius:18px;padding:14px}.activityUploadBox input[type=file]{background:#fff}.evidenceNote{font-size:13px;color:#657082;margin-top:6px}.module .evalReady{background:#138a4a;color:white}.activityCard .badge.activityDone{background:#e8f7ef;color:#075e30;border:1px solid #bfe8cd}.activityCard .badge.evalPending{background:#fff5d9;color:#7b4b00;border:1px solid #f4d27a}.activityCard.completedActivity{border-color:#bfe8cd;box-shadow:0 18px 44px rgba(19,138,74,.12)}.activityCard.completedActivity:after{content:"Evaluación pendiente";position:absolute;right:14px;top:16px;background:#fff5d9;color:#7b4b00;border:1px solid #f4d27a;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.activityCard.evaluatedActivity:after{content:"Módulo aprobado";background:#0b2a6f;color:#fff;border-color:#0b2a6f}
+
+
+/* ===== V19: confianza comercial, aval CODII y microinteracciones ===== */
+.payActions button,.payActions .priceChip{transition:transform .18s ease, box-shadow .18s ease, filter .18s ease}.payActions button:hover,.payActions .priceChip:hover{transform:scale(1.045);box-shadow:0 14px 30px rgba(7,11,36,.16);filter:saturate(1.05)}.payActions button:active{transform:scale(.985)}
+.trustSeal{max-width:1280px;margin:0 auto 22px;padding:0 24px}.trustSealInner{background:linear-gradient(135deg,#070b24 0%,#0b2a6f 58%,#123f64 100%);color:#fff;border-radius:28px;padding:18px 22px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;box-shadow:0 22px 58px rgba(7,11,36,.20);border:1px solid rgba(255,255,255,.12)}.trustSeal img{height:64px;background:#fff;border-radius:16px;padding:8px;object-fit:contain}.trustSeal h3{margin:0 0 5px;font-size:24px}.trustSeal p{margin:0;color:#dce7f8}.trustSeal .sealBadge{background:rgba(231,187,50,.18);border:1px solid rgba(231,187,50,.55);color:#fff;border-radius:999px;padding:9px 13px;font-weight:950;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}.courseTrustBox{border:1px solid rgba(11,42,111,.18);background:linear-gradient(135deg,#f7fbff,#fff);border-radius:22px;padding:16px;display:flex;gap:14px;align-items:center;margin:18px 0}.courseTrustBox img{width:86px;background:#fff;border:1px solid #e7eaf1;border-radius:16px;padding:7px}.courseTrustBox b{color:#0b2a6f}.paymentRibbon .bankBtn{background:#fff;color:#070b24;border:1px solid #e5e7eb}.paymentRibbon .bankBtn.primaryBank{background:linear-gradient(135deg,#0b2a6f,#070b24);color:#fff;border-color:#0b2a6f}.commercialHeroBox .bankBtn.primaryBank{background:linear-gradient(135deg,#0b2a6f,#070b24);color:#fff;border-color:#0b2a6f}
+@media(max-width:920px){.trustSealInner{grid-template-columns:1fr;text-align:left}.trustSeal .sealBadge{justify-self:start}.courseTrustBox{display:block}.courseTrustBox img{margin-bottom:10px}}
+
+/* ===== V24: Nota flotante de acompañamiento en vivo ===== */
+.liveMentoringFloat{
+  position:fixed;
+  left:22px;
+  bottom:22px;
+  width:min(390px,calc(100vw - 44px));
+  z-index:118;
+  border-radius:28px;
+  background:linear-gradient(135deg,#070b24 0%,#102c66 52%,#0b5b78 100%);
+  color:#fff;
+  box-shadow:0 24px 70px rgba(7,11,36,.34);
+  border:1px solid rgba(255,255,255,.18);
+  overflow:hidden;
+  animation:mentorFloat 3.4s ease-in-out infinite;
+}
+.liveMentoringFloat:before{
+  content:"";
+  position:absolute;
+  inset:-80px auto auto -80px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(231,187,50,.23);
+  filter:blur(2px);
+}
+.liveMentoringFloat:after{
+  content:"";
+  position:absolute;
+  right:-60px;
+  bottom:-70px;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:rgba(22,181,232,.22);
+}
+.liveMentorInner{
+  position:relative;
+  z-index:2;
+  padding:18px 18px 16px;
+}
+.liveMentorTop{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+}
+.liveMentorBadge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  background:rgba(231,187,50,.18);
+  color:#fff;
+  border:1px solid rgba(231,187,50,.48);
+  border-radius:999px;
+  padding:7px 10px;
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.livePulse{
+  width:10px;
+  height:10px;
+  background:#22c55e;
+  border-radius:50%;
+  box-shadow:0 0 0 0 rgba(34,197,94,.72);
+  animation:livePulse 1.7s infinite;
+}
+.liveMentorClose{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  padding:0;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+}
+.liveMentoringFloat h3{
+  margin:12px 0 8px;
+  color:#fff;
+  font-size:22px;
+  line-height:1.08;
+}
+.liveMentoringFloat p{
+  margin:0;
+  color:#e8eefb;
+  font-size:14.5px;
+  line-height:1.42;
+}
+.liveMentorMini{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:13px 0;
+}
+.liveMentorMini div{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:15px;
+  padding:9px;
+  text-align:center;
+}
+.liveMentorMini b{
+  display:block;
+  color:#e7bb32;
+  font-size:18px;
+}
+.liveMentorMini span{
+  display:block;
+  font-size:11px;
+  color:#d9e2f3;
+  margin-top:2px;
+}
+.liveMentorActions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:13px;
+}
+.liveMentorActions button{
+  flex:1;
+  min-width:135px;
+  border-radius:14px;
+  padding:10px 12px;
+}
+.liveMentorActions .mentorPrimary{
+  background:#e7bb32;
+  color:#111827;
+}
+.liveMentorActions .mentorSecondary{
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+}
+.liveSessionTrust{
+  margin-top:12px;
+  padding:11px 13px;
+  border:1px solid rgba(231,187,50,.38);
+  background:rgba(255,255,255,.08);
+  border-radius:17px;
+  color:#eff6ff;
+  font-size:13px;
+  line-height:1.35;
+}
+.liveSessionBanner{
+  margin:18px 0;
+  background:linear-gradient(135deg,#fff8df,#ffffff 58%,#edfaff);
+  border:1px solid rgba(231,187,50,.55);
+  border-radius:26px;
+  padding:18px;
+  box-shadow:0 16px 36px rgba(15,23,42,.08);
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:16px;
+  align-items:center;
+}
+.liveSessionBanner .sessionSeal{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#075e30;
+  background:#e8f7ef;
+  border:1px solid #bfe8cd;
+  border-radius:999px;
+  padding:8px 12px;
+  font-weight:950;
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.liveSessionBanner h3{
+  font-size:25px;
+  margin:10px 0 6px;
+}
+.sessionSteps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+}
+.sessionSteps div{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:12px;
+  text-align:center;
+  box-shadow:0 8px 18px rgba(15,23,42,.06);
+}
+.sessionSteps b{
+  color:var(--blue);
+  display:block;
+  font-size:20px;
+}
+.sessionSteps span{
+  color:var(--muted);
+  font-size:12px;
+  display:block;
+  line-height:1.25;
+}
+@keyframes mentorFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+@keyframes livePulse{
+  70%{box-shadow:0 0 0 12px rgba(34,197,94,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+@media(max-width:920px){
+  .liveMentoringFloat{
+    left:14px;
+    right:14px;
+    bottom:88px;
+    width:auto;
+  }
+  .liveSessionBanner{
+    grid-template-columns:1fr;
+  }
+  .sessionSteps{
+    grid-template-columns:1fr;
+  }
+  .liveMentorActions button{
+    width:100%;
+  }
+}
+
+
+
+/* ===== V31 · Folleto público visible en Inicio ===== */
+.publicBrochureSpot{margin:20px 0 22px;border:1px solid rgba(231,187,50,.46);border-radius:28px;background:linear-gradient(135deg,#071638 0%,#0d3561 55%,#f7fbff 55%,#ffffff 100%);box-shadow:0 24px 58px rgba(7,11,36,.16);overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;min-height:210px}
+.publicBrochureMain{padding:26px 28px;color:#fff}
+.publicBrochureMain .label{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:12px;font-weight:950;letter-spacing:.04em;text-transform:uppercase}
+.publicBrochureMain h3{margin:16px 0 10px;color:#fff;font-size:1.55rem;line-height:1.15}
+.publicBrochureMain p{margin:0;color:#e9eef9;line-height:1.55}
+.publicBrochureSide{padding:24px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.publicBrochureSide .miniMap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.publicBrochureSide .miniMap span{border:1px solid #e6edf5;background:#fff;border-radius:14px;padding:10px 8px;text-align:center;font-size:12px;font-weight:900;color:#0b2a6f}
+.publicBrochureActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.publicBrochureActions button,.publicBrochureActions a{min-width:170px}
+.publicBrochureHint{font-size:12px;color:var(--muted);line-height:1.35}
+@media(max-width:860px){.publicBrochureSpot{grid-template-columns:1fr;background:linear-gradient(180deg,#071638,#0d3561 56%,#fff 56%,#fff)}.publicBrochureMain{padding:22px}.publicBrochureSide{padding:20px}.publicBrochureSide .miniMap{grid-template-columns:1fr 1fr}}
+
+/* ===== V30 · Repositorio del curso y barra CODII clicable ===== */
+.trustSealLink{color:#fff;text-decoration:none;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;cursor:pointer}
+.trustSealLink:hover{transform:translateY(-2px);box-shadow:0 26px 58px rgba(7,11,36,.32);border-color:rgba(231,187,50,.85)}
+.courseTrustBoxLink{display:flex;align-items:center;gap:14px;color:var(--ink);text-decoration:none;transition:.22s ease;cursor:pointer}
+.courseTrustBoxLink:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(15,23,42,.12);border-color:rgba(231,187,50,.7)}
+.repoIntro{background:linear-gradient(135deg,#071638,#123f69);color:#fff;border-radius:26px;padding:22px;margin:18px 0;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border:1px solid rgba(231,187,50,.45);box-shadow:0 20px 48px rgba(7,11,36,.18)}
+.repoIntro h3{margin:0 0 8px;color:#fff}.repoIntro p{margin:0;color:#e9eef9}.repoState{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:12px 14px;font-weight:950;white-space:nowrap}.repoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}.repoCard{border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 14px 34px rgba(15,23,42,.08);overflow:hidden;display:flex;flex-direction:column;min-height:230px}.repoCard.public{border-color:rgba(19,138,74,.32)}.repoCard.lockedRepo{background:linear-gradient(180deg,#fff,#f8fafc);opacity:.88}.repoTop{height:8px;background:linear-gradient(90deg,var(--navy),var(--gold))}.repoCard.public .repoTop{background:linear-gradient(90deg,var(--green),var(--cyan))}.repoBody{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}.repoMeta{display:flex;gap:8px;flex-wrap:wrap}.repoType{border-radius:999px;padding:5px 9px;font-size:12px;font-weight:950;background:#eef4ff;color:#0b2a6f}.repoAccess{border-radius:999px;padding:5px 9px;font-size:12px;font-weight:950}.repoAccess.ok{background:#e8f7ef;color:#075e30}.repoAccess.lock{background:#fff5d9;color:#7b4b00}.repoActions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}.repoActions a,.repoActions button{min-width:150px}.repoEmpty{border:1px dashed #cbd5e1;border-radius:18px;padding:18px;color:var(--muted);background:#f8fafc}.repoNote{margin-top:14px;border:1px solid rgba(231,187,50,.42);background:#fffaf0;border-radius:18px;padding:14px 16px;color:#5c4400}.repoRefresh{background:#fff;color:var(--navy);border:1px solid var(--line)}
+@media(max-width:860px){.repoIntro{grid-template-columns:1fr}.repoGrid{grid-template-columns:1fr}.repoState{white-space:normal}.trustSealInner{align-items:flex-start}.trustSealInner img{max-width:150px}}
+
+</style></head><body>
+<header class="top"><div class="top-inner"><div class="brand"><img src="assets/logos/codii-logo.png" alt="CODII"><div class="brand-title">Curso online interactivo<small>Diseño Instruccional 5.0 · IA · Certificación</small></div></div><div class="collab"><span class="small">COLABORA</span><img src="assets/logos/academia-universal.png" alt="Academia Universal"></div><nav class="nav" id="nav"></nav></div></header>
+<div class="moduleDock"><div id="moduleDock" class="moduleDockInner"><span class="moduleDockTitle">Ruta modular</span></div></div>
+<section class="hero"><div class="hero-inner"><div><div class="eyebrow">Colegio de Doctores e Investigadores de Iberoamérica · Academia Universal · 80 horas académicas</div><h1>Diseño Instruccional 5.0 con Inteligencia Artificial</h1><p class="lead">Creación de planes didácticos, situaciones multinivel, rúbricas inteligentes, evaluaciones automatizadas y entornos interactivos de aprendizaje</p><div class="authorBar"><img src="assets/autor/yordenis-ramos.jpg" alt="Autor"><div><b>Lic. Yordenis Ramos López, Ph.D.(c)</b><br><span>Autor y Director Académico del Curso · Especialista en ECOSISTEMA 5.0</span></div></div><div class="actions"><button onclick="showSection('inicio')">Iniciar recorrido</button><button class="paypalHero" onclick="openPaymentModal()">Inscribirme · USD 50</button><button class="whatsHero" onclick="openWhatsApp()">WhatsApp Academia Universal</button><button class="secondary" onclick="showSection('autor')">Conocer autor</button></div></div><div class="hero-card"><div class="videoShell"><div class="videoFrame"><video controls preload="metadata" poster="assets/video/poster-bienvenida.jpg"><source src="assets/video/bienvenida-yordenis.mp4" type="video/mp4"></video></div><div><h3>Mensaje del director académico</h3><p class="muted">Antes de iniciar, revise la visión del curso y el sentido práctico de construir productos didácticos, evaluativos y tecnológicos para escenarios reales.</p></div></div><div class="stats"><div class="stat"><b>80</b><br><span>horas académicas</span></div><div class="stat"><b>6</b><br><span>módulos prácticos</span></div><div class="stat"><b>70/100</b><br><span>mínimo aprobatorio</span></div><div class="stat"><b>5.0</b><br><span>enfoque Ecosistema</span></div></div></div></div></section>
+<div class="paymentRibbon"><div class="paymentRibbonInner"><div><h3><span class="pulseDot"></span>Inscripción abierta · Diseño Instruccional 5.0 con IA</h3><p>Acceda a 80 horas académicas, seis módulos prácticos, evaluaciones modulares, proyecto final y certificación digital. Valor de inversión: <b>USD 50</b>.</p></div><div class="payActions"><span class="priceChip">Curso premium <b>$50</b></span><button class="paypalBtn" onclick="openPayPal()">Pagar por PayPal</button><button class="bankBtn primaryBank" onclick="openPaymentModal()">Ver medios de pago y enviar comprobante</button><button class="secondary" onclick="showSection('inicio')">Preinscribirme</button><button class="secondary" onclick="showSection('pagos')">Panel de pagos</button></div></div></div>
+<div class="trustSeal"><a class="trustSealInner trustSealLink" href="https://www.codi2.edu.ec/sitio/principal" target="_blank" rel="noopener noreferrer" title="Abrir portal oficial del Colegio de Doctores e Investigadores de Iberoamérica"><img src="assets/logos/codii-logo.png" alt="Colegio de Doctores e Investigadores de Iberoamérica"><div><h3>Curso avalado por el Colegio de Doctores e Investigadores de Iberoamérica</h3><p>Formación académica con respaldo institucional, trazabilidad de evidencias, evaluación modular y certificación digital sujeta a validación académica y administrativa.</p></div><span class="sealBadge">Aval CODII</span></a></div>
+
+<main class="container"><div class="layout"><aside class="panel"><h3>Panel de avance</h3><div class="progressLabel"><span>Recorrido completado</span><b id="percent">0%</b></div><div class="bar"><span id="bar"></span></div><div id="statusList"></div><div id="accessMode" class="accessMode"><b>Modo de acceso</b><div class="panelGuide">Registre su identidad para habilitar el Módulo 1. Si carga comprobante, se habilitan todos los módulos; el certificado queda condicionado a aprobación académica y validación administrativa.</div></div><div id="miniProgress" class="miniProgress"></div><div class="card" style="margin-top:16px"><h3>Siguiente paso</h3><p id="nextStep" class="muted">Registre su identidad para iniciar el curso.</p><button style="width:100%" onclick="nextAction()">Continuar</button></div><div class="card" style="margin-top:16px"><h3>Condición de certificación</h3><p class="small muted">Completar los 6 módulos, aprobar las 6 evaluaciones modulares, completar actividades, aprobar evaluación final con mínimo 70/100 y tener pago VALIDADO.</p></div><div class="card" style="margin-top:16px;background:linear-gradient(135deg,#fff7df,#ffffff)"><h3>Inscripción</h3><p class="small muted">Valor del curso: <b>USD 50</b>. El pago puede realizarse al inicio o antes de la certificación.</p><button class="gold" style="width:100%" onclick="showSection('pagos')">Panel de inscripción y pagos</button></div></aside><div>
+<section class="section active" id="inicio"><div class="card courseIntro"><div class="courseBadge">Nivel 2 · Ecosistema formativo comercializable</div><h2>Descripción del curso</h2><p><b>Diseño Instruccional 5.0 con Inteligencia Artificial</b> es una experiencia práctica para docentes, tutores, coordinadores académicos y profesionales de posgrado que desean construir recursos educativos inteligentes sin depender de programación avanzada. El curso integra planificación didáctica, situaciones multinivel, rúbricas, formularios, evaluaciones, simulaciones, automatización con Google Workspace y publicación de entornos interactivos.</p><a class="courseTrustBox courseTrustBoxLink" href="https://www.codi2.edu.ec/sitio/principal" target="_blank" rel="noopener noreferrer" title="Abrir portal oficial del Colegio de Doctores e Investigadores de Iberoamérica"><img src="assets/logos/codii-logo.png" alt="Aval CODII"><div><b>Respaldo académico institucional:</b><br><span>Este programa cuenta con aval del Colegio de Doctores e Investigadores de Iberoamérica y se desarrolla en colaboración con Academia Universal bajo el enfoque ECOSISTEMA 5.0.</span></div></a><div id="publicBrochureBox" class="publicBrochureSpot"><div class="publicBrochureMain"><span class="label">Acceso público · Mapeo del curso</span><h3>Descargue el folleto oficial del curso</h3><p>Conozca la ruta completa del programa: propósito, módulos, beneficios, herramientas, aval académico, acompañamiento, certificación y canales oficiales. Este recurso es público y está disponible para todos los interesados.</p></div><div class="publicBrochureSide"><div class="miniMap"><span>80 horas</span><span>6 módulos</span><span>3 sesiones</span><span>IA educativa</span><span>Certificado</span><span>CODII</span></div><div class="publicBrochureActions"><button class="green" onclick="openPublicBrochure()">Descargar folleto oficial</button><button class="secondary" onclick="showSection('recursos'); setTimeout(()=>{const b=[...document.querySelectorAll('.tabs button')].find(x=>x.textContent.includes('Guías')); if(b) resourceTab('repo',b);},90)">Ver repositorio</button></div><div class="publicBrochureHint" id="publicBrochureHint">El enlace se toma automáticamente desde la pestaña RESOURCES, fila brochure.</div></div></div><div class="grid2"><div class="infoBlock"><h3>Objetivo general</h3><p>Diseñar un mini ecosistema de aprendizaje 5.0, mediado por IA y tecnologías abiertas, que articule planificación, recursos interactivos, evaluación automatizada, retroalimentación, trazabilidad y certificación de evidencias formativas.</p></div><div class="infoBlock"><h3>Producto final</h3><p>Un entorno de aprendizaje publicable, con presentación HTML, actividad aplicada, evaluación, rúbrica, registro en Google Sheets y evidencia final para la práctica docente.</p></div></div><h3 style="margin-top:18px">Resultados de aprendizaje orientados al saber hacer</h3><div class="outcomeGrid"><div><b>Planificar</b><span>Diseñar planes didácticos con resultados, evidencias, secuencias y recursos coherentes.</span></div><div><b>Diferenciar</b><span>Construir situaciones multinivel y simultáneas para grupos heterogéneos.</span></div><div><b>Evaluar</b><span>Crear rúbricas, listas de cotejo, evaluaciones y retroalimentación semaforizada.</span></div><div><b>Automatizar</b><span>Conectar formularios, hojas de cálculo y Apps Script para registrar evidencias.</span></div><div><b>Simular</b><span>Producir escenarios interactivos para asignaturas experimentales y proyectos aplicados.</span></div><div><b>Publicar</b><span>Organizar un entorno HTML funcional, navegable y certificable para estudiantes.</span></div></div></div>
+<div class="liveSessionBanner">
+  <div>
+    <span class="sessionSeal">Acompañamiento académico en vivo</span>
+    <h3>Además del curso interactivo, tendrá 3 sesiones intensivas 100% online conmigo.</h3>
+    <p class="muted">En estas jornadas desarrollaremos el paso a paso para que cada participante construya su propio ecosistema formativo 5.0 según su asignatura, nivel educativo, especialidad, programa, curso de capacitación o seminario.</p>
+  </div>
+  <div class="sessionSteps">
+    <div><b>1</b><span>Arquitectura de su ecosistema</span></div>
+    <div><b>2</b><span>Recursos, actividades y evaluación</span></div>
+    <div><b>3</b><span>Automatización, evidencias y certificación</span></div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:18px"><h2>Cómo se habilita el recorrido</h2><p class="muted">El curso funciona con una lógica transparente para evitar confusiones: el estudiante siempre visualiza su estado, el siguiente paso y las condiciones de certificación.</p><div class="accessGuide"><div class="stepAccess"><b>1. Identidad</b><span>Al guardar nombre y correo se activa el Módulo 1 y la trazabilidad académica.</span></div><div class="stepAccess"><b>2. Ruta secuencial</b><span>Sin pago inicial, el avance es progresivo: recurso, actividad y evaluación por módulo.</span></div><div class="stepAccess"><b>3. Comprobante</b><span>Al cargar comprobante se habilitan todos los módulos para exploración y avance.</span></div><div class="stepAccess"><b>4. Certificado</b><span>Solo se emite con módulos aprobados, evaluación final aprobada y pago VALIDADO.</span></div></div><div class="whatsappTrust"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.35c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.12 2.83c.14.18 1.93 2.94 4.68 4.12.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.61-.66 1.84-1.3.23-.64.23-1.18.16-1.3-.07-.11-.25-.18-.52-.32z"/><path fill="currentColor" d="M16.03 3C8.86 3 3.03 8.72 3.03 15.76c0 2.25.6 4.45 1.74 6.38L3 29l7.02-1.81a13.2 13.2 0 0 0 6.01 1.48c7.17 0 13-5.72 13-12.76S23.2 3 16.03 3zm0 23.55c-1.95 0-3.85-.51-5.51-1.48l-.39-.23-4.17 1.07 1.11-4.01-.26-.41a10.45 10.45 0 0 1-1.63-5.61c0-5.87 4.87-10.64 10.85-10.64s10.85 4.77 10.85 10.64-4.87 10.67-10.85 10.67z"/></svg><span>Canal oficial de atención: WhatsApp Academia Universal +593 99 790 3950.</span></div></div>
+<div class="grid2 startGrid"><div class="card preRegCard"><span class="commercialBadge">Preinscripción sin pago inmediato</span><h2>Registro de interés</h2><p class="muted">Si el usuario todavía no está seguro de pagar la inscripción, puede dejar sus datos como constancia de interés. Academia Universal podrá contactarlo para ampliar información, resolver dudas y acompañar el proceso de inscripción.</p><label>Nombre completo</label><input id="leadName" placeholder="Ej.: María Fernanda Zambrano"><label>Correo electrónico</label><input id="leadEmail" type="email" placeholder="correo@ejemplo.com"><label>WhatsApp / teléfono</label><input id="leadPhone" placeholder="Ej.: +593 99 790 3950"><label>País o ciudad</label><input id="leadCountry" placeholder="Ej.: Ecuador / Colombia / Perú"><label>Interés principal</label><select id="leadInterest"><option value="">Seleccione...</option><option>Planes didácticos con IA</option><option>Situaciones multinivel y simultáneas</option><option>Rúbricas y evaluación automatizada</option><option>Formularios, Sheets y Apps Script</option><option>Entornos HTML y simulaciones educativas</option><option>Certificación del curso</option></select><div class="actions"><button class="gold" onclick="preRegisterLead()">Registrar interés</button><button class="secondary" onclick="openWhatsApp()">Consultar por WhatsApp</button></div><div id="leadFeedback"></div></div><div class="card"><span class="commercialBadge">Acceso al recorrido formativo</span><h2>Identidad del participante</h2><p class="muted">El registro de identidad activa el recorrido del curso. El pago puede realizarse al inicio o antes de la emisión del certificado, según la modalidad de inscripción definida por Academia Universal.</p><label>Nombre completo</label><input id="name" placeholder="Ej.: Yordenis Ramos López"><label>Correo electrónico</label><input id="email" type="email" placeholder="correo@ejemplo.com"><label>Institución / cohorte</label><input id="cohort" placeholder="Ej.: Maestría en Tecnología e Innovación Educativa"><div class="infoBlock mini"><b>Producto final del curso</b><p>Mini ecosistema de aprendizaje 5.0: planificación, recurso interactivo, rúbrica/evaluación, registro de datos y evidencia final.</p></div><div class="actions"><button onclick="registerUser()">Guardar identidad e iniciar</button><button class="secondary" onclick="showSection('ruta')">Ver ruta formativa</button></div><div id="identityFeedback"></div></div></div></section>
+<section class="section" id="ruta"><div class="card"><h2>Ruta formativa del curso</h2><p class="muted">El avance es claro y visible: por defecto es secuencial; si el participante carga comprobante de pago, todos los módulos quedan disponibles para avanzar, pero el certificado sigue condicionado a la aprobación académica y validación administrativa.</p><div id="routeFlowHeader"></div><div class="modules" id="routeModules"></div></div></section>
+<section class="section" id="recursos"><div class="card"><h2>Repositorio del curso</h2><p>En este espacio encontrará las guías, folletos, recursos técnicos y materiales descargables que acompañan el proceso formativo. El folleto general es público; las guías y paquetes técnicos se habilitan cuando el registro y el pago aparecen como <b>VALIDADO</b>.</p><div id="moduleFlowHeaderResources"></div><div class="tabs"><button class="active" onclick="resourceTab('mods',this)">Módulos interactivos</button><button onclick="resourceTab('repo',this)">Guías y materiales</button><button onclick="resourceTab('tools',this)">Herramientas IA</button></div><div id="resourceContent"></div></div></section>
+<section class="section" id="actividades"><div class="card"><h2>Actividades aplicadas por módulo</h2><p class="muted">Cada actividad genera una evidencia práctica vinculada al producto final.</p><div id="moduleFlowHeaderActivities"></div><div id="activityArea"></div></div></section>
+<section class="section" id="evaluaciones"><div class="card"><h2>Evaluaciones modulares</h2><p class="muted">Debe aprobar cada evaluación con mínimo 70/100 para avanzar.</p><div id="moduleFlowHeaderEvaluations"></div><div id="moduleEvalArea"></div></div></section>
+<section class="section" id="final"><div class="card"><h2>Evaluación final integradora</h2><p>La evaluación final se habilita cuando se completan los seis módulos.</p><div id="finalEvalArea"></div></div></section>
+<section class="section" id="pagos"><div class="card"><span class="commercialBadge">Inscripción y validación administrativa</span><h2>Panel de pagos y comprobantes</h2><p class="muted">El estudiante puede cursar de forma secuencial después de registrar su identidad. Si realiza el pago y carga el comprobante, se habilita el acceso a todos los módulos para avanzar con mayor flexibilidad. El certificado se mantiene bloqueado hasta cumplir los requisitos académicos y la validación administrativa del pago.</p><div class="commercialHeroBox"><h3><span class="pulseDot"></span>Inscripción abierta · acceso premium USD 50</h3><p>El pago puede realizarse por PayPal, Banco Pichincha o Banco del Pacífico. Si el participante carga el comprobante, todos los módulos quedan disponibles para avanzar; la certificación se emite solo al cumplir los requisitos académicos y la validación administrativa.</p><div class="payActions"><span class="priceChip">Curso premium <b>$50</b></span><button class="paypalBtn" onclick="openPayPal()">Pagar por PayPal</button><button class="bankBtn primaryBank" onclick="openPaymentModal()">Ver medios de pago y enviar comprobante</button></div></div><div class="paymentAccessBanner"><b>Regla de acceso premium:</b> comprobante cargado = módulos desbloqueados. Certificado = módulos aprobados + evaluación final aprobada + pago VALIDADO.</div><div class="methodCards"><div class="methodCard"><h3>Pago internacional</h3><p>Para estudiantes fuera de Ecuador. Valor del curso: <b>USD 50</b>.</p><button class="paypalBtn" onclick="openPayPal()">Pagar por PayPal</button></div><div class="methodCard"><h3>Transferencia nacional</h3><p>Pago por Banco Pichincha o Banco del Pacífico. Consulte los datos bancarios y cargue el comprobante.</p><button class="gold" onclick="openPaymentModal()">Ver datos y subir comprobante</button></div><div class="methodCard"><h3>Asistencia personalizada</h3><p>Comuníquese con Academia Universal para confirmar inscripción, pago o envío de comprobante.</p><button class="whatsBtn" onclick="openWhatsApp()">WhatsApp oficial</button></div></div><div class="calloutSafe"><b>Transparencia para el participante:</b> todos los comprobantes quedan registrados en Google Sheets y almacenados en Drive para revisión administrativa. El estado inicial es <b>PENDIENTE</b>; solo al cambiar a <b>VALIDADO</b> se autoriza la emisión del certificado.</div><div class="actions"><button onclick="openPaymentModal()">Cargar comprobante ahora</button><button class="secondary" onclick="checkPaymentStatusUI()">Consultar estado de pago</button><button class="secondary" onclick="showSection('recursos')">Ir a recursos</button></div><div id="paymentPanelFeedback"></div></div></section>
+<section class="section" id="certificado"><div class="card"><h2>Certificado</h2><p class="muted">El certificado se habilita únicamente al completar la ruta formativa, aprobar la evaluación final y validar administrativamente la inscripción del curso.</p><div class="certPaymentPanel"><h3>💳 Validación de inscripción antes del certificado</h3><p class="muted">Para generar el certificado, el participante debe completar el curso, aprobar con mínimo 70/100 y tener el comprobante de pago <b>VALIDADO</b> por Academia Universal. Valor oficial del curso: <b>USD 50</b>.</p><div class="miniPayGrid"><div class="miniPay"><b>1. Pagar</b><p>PayPal internacional o transferencia nacional.</p><button class="paypalBtn" onclick="openPaymentModal()">Métodos de pago</button></div><div class="miniPay"><b>2. Subir comprobante</b><p>Registre el comprobante en el formulario integrado.</p><button class="secondary" onclick="openPaymentModal()">Subir comprobante</button></div><div class="miniPay"><b>3. Validar estado</b><p>Consulte si su pago ya fue validado.</p><button class="green" onclick="checkPaymentStatusUI()">Consultar estado</button></div></div><div id="certPaymentStatus" style="margin-top:14px"><span class="paymentStatusPill none">Sin consulta de pago</span></div></div><div class="certPreview"><img src="assets/logos/codii-logo.png" style="height:70px;object-fit:contain"><h2>Diseño Instruccional 5.0 con Inteligencia Artificial</h2><p>Creación de planes didácticos, situaciones multinivel, rúbricas inteligentes, evaluaciones automatizadas y entornos interactivos de aprendizaje</p><h3 id="certName">Participante</h3><p>80 horas académicas · Folio digital · Validación pública</p><div class="actions" style="justify-content:center"><button class="green" onclick="issueCertificate()">Generar certificado</button><a class="btn secondary" href="certificado_modelo_muestra.html" target="_blank">Ver modelo de certificado</a><a class="btn secondary" href="certificado_modelo_muestra.pdf" target="_blank">Descargar modelo PDF</a></div><div id="certFeedback"></div></div></div></section>
+<section class="section" id="autor"><div class="author-layout"><div><div class="card" style="text-align:center"><img class="author-avatar" src="assets/autor/yordenis-ramos.jpg" alt="Autor"><h3>Lic. Yordenis Ramos López, Ph.D.(c)</h3><p><b>Autor y Director Académico del Curso</b><br>Especialista en ECOSISTEMA 5.0</p></div><div class="card" style="margin-top:18px"><h2>Galería académica</h2><p class="muted">Certificaciones y reconocimientos del autor.</p><div class="gallery"><div class="gallery-track" id="galleryTrack"></div></div></div></div><div class="card"><h2>Conoce al autor del curso</h2><p><b>Lic. Yordenis Ramos López, Ph.D.(c)</b> es doctorando en Ciencias de la Educación, Máster en Ciencias de la Educación y Licenciado en Educación. Desarrolla proyectos de formación, investigación, innovación educativa, evaluación académica y diseño de ecosistemas mediados por tecnologías emergentes.</p><p>Su trabajo articula docencia de posgrado, producción científica, gestión editorial, evaluación de procesos educativos y diseño de experiencias formativas vinculadas al enfoque ECOSISTEMA 5.0.</p><p>En este curso, orienta la construcción de productos prácticos para docentes que buscan diseñar, automatizar, evaluar y certificar aprendizajes con apoyo de IA y tecnologías abiertas.</p></div></div></section>
+</div></div></main><footer class="footerCredits"><div class="footerCreditsInner"><div><span class="commercialBadge">ECOSISTEMA 5.0 · Academia Universal</span><h3 style="margin:12px 0 8px">Diseño Instruccional 5.0 con Inteligencia Artificial</h3><p><b>Lic. Yordenis Ramos López, Ph.D.(c)</b> — Autor y Director Académico del Curso — Especialista en ECOSISTEMA 5.0</p><p>Colegio de Doctores e Investigadores de Iberoamérica · Academia Universal · 80 horas académicas · Valor de inscripción: USD 50</p><p>WhatsApp Academia Universal: <b>+593 99 790 3950</b> · Certificación sujeta a validación académica y administrativa</p></div><div class="footerLogos"><img src="assets/logos/codii-logo.png" alt="CODII"><img src="assets/logos/academia-universal.png" alt="Academia Universal"></div></div></footer>
+
+<div class="liveMentoringFloat" id="liveMentoringFloat">
+  <div class="liveMentorInner">
+    <div class="liveMentorTop">
+      <span class="liveMentorBadge"><span class="livePulse"></span>Acompañamiento en vivo incluido</span>
+      <button class="liveMentorClose" onclick="dismissLiveMentor()" title="Ocultar aviso">×</button>
+    </div>
+    <h3>3 sesiones intensivas 100% online con el autor del curso</h3>
+    <p>Soy el autor y director académico del programa. Trabajaré con ustedes en tres jornadas en vivo para construir, paso a paso, un ecosistema formativo 5.0 aplicable a su materia, área de especialización, curso, seminario o programa de capacitación.</p>
+    <div class="liveMentorMini">
+      <div><b>3</b><span>jornadas en vivo</span></div>
+      <div><b>100%</b><span>online</span></div>
+      <div><b>1</b><span>producto aplicable</span></div>
+    </div>
+    <div class="liveSessionTrust"><b>Incluye:</b> actividades, evaluaciones, evidencias, acompañamiento práctico y certificado avalado por el Colegio de Doctores e Investigadores de Iberoamérica.</div>
+    <div class="liveMentorActions">
+      <button class="mentorPrimary" onclick="showSection('inicio')">Ver recorrido</button>
+      <button class="mentorSecondary" onclick="showSection('pagos')">Inscribirme</button>
+    </div>
+  </div>
+</div>
+
+<a class="floatWhats" href="https://wa.me/593997903950?text=Hola%2C%20deseo%20informaci%C3%B3n%20para%20inscribirme%20en%20el%20curso%20Dise%C3%B1o%20Instruccional%205.0%20con%20Inteligencia%20Artificial.%20Valor%3A%20USD%2050." target="_blank" rel="noopener" aria-label="WhatsApp Academia Universal"><span class="waIcon"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.35c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.91 2.92 4.63 4.09.65.28 1.15.45 1.54.58.65.21 1.24.18 1.71.11.52-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"/><path fill="currentColor" d="M16.01 3.2c-7.07 0-12.82 5.75-12.82 12.82 0 2.26.59 4.46 1.72 6.4L3.08 29l6.74-1.77a12.76 12.76 0 0 0 6.19 1.58h.01c7.07 0 12.82-5.75 12.82-12.82S23.08 3.2 16.01 3.2zm0 23.45h-.01c-1.9 0-3.77-.51-5.4-1.47l-.39-.23-4 1.05 1.07-3.9-.25-.4a10.6 10.6 0 0 1-1.63-5.68c0-5.85 4.76-10.61 10.62-10.61 2.84 0 5.51 1.11 7.51 3.12a10.55 10.55 0 0 1 3.11 7.5c0 5.86-4.77 10.62-10.62 10.62z"/></svg></span><span>WhatsApp oficial<small>Academia Universal</small></span></a>
+<div class="payModal" id="paymentModal"><div class="payModalBox"><div class="payModalHead"><div><h2>Métodos de inscripción, pago y validación</h2><p style="margin:6px 0 0;color:#d9deec">Curso: Diseño Instruccional 5.0 con IA · Valor: <b>USD 50</b></p></div><button class="closePay" onclick="closePaymentModal()">×</button></div><div class="payModalBody"><div class="paymentWorkflow"><div><b>1. Seleccione método</b><span>PayPal, Pichincha o Pacífico.</span></div><div><b>2. Realice el pago</b><span>Valor oficial: USD 50.</span></div><div><b>3. Suba comprobante</b><span>PDF, JPG o PNG.</span></div><div><b>4. Validación</b><span>Academia Universal revisa y habilita certificado.</span></div></div><div class="payGrid" style="margin-top:18px"><div class="payCard featured"><div class="payCardTop"><h3>Pago internacional por PayPal</h3><p>Opción recomendada para estudiantes fuera de Ecuador. El enlace real queda protegido detrás del botón institucional.</p><button class="paypalBtn" onclick="openPayPal()">Pagar inscripción USD 50</button></div></div><div class="payCard"><img class="premiumBankImg" src="assets/pagos/pichincha-premium.png" alt="Banco Pichincha"><div class="payCardTop"><h3>Banco Pichincha</h3><div class="bankFacts"><div><b>Titular:</b> Yordenis Ramos López</div><div><b>Tipo:</b> Cuenta de ahorros</div><div><b>Cuenta:</b> 2203015925</div><div><b>CI:</b> 1757067770</div><div><b>Correo:</b> academiauniversal.rev@gmail.com</div></div><button class="copyBtn" onclick="copyText('Banco Pichincha · Cuenta de ahorros 2203015925 · Yordenis Ramos López · CI 1757067770 · academiauniversal.rev@gmail.com')">Copiar datos</button></div></div><div class="payCard"><img class="premiumBankImg" src="assets/pagos/pacifico-premium.png" alt="Banco del Pacífico"><div class="payCardTop"><h3>Banco del Pacífico</h3><div class="bankFacts"><div><b>Titular:</b> Neymar Gabriel Ramos Marzo</div><div><b>Tipo:</b> Cuenta de ahorro</div><div><b>Cuenta:</b> 1068022514</div><div><b>CI:</b> 0961954369</div><div><b>Correo:</b> academiauniversal.rev@gmail.com</div></div><button class="copyBtn" onclick="copyText('Banco del Pacífico · Cuenta de ahorro 1068022514 · Neymar Gabriel Ramos Marzo · CI 0961954369 · academiauniversal.rev@gmail.com')">Copiar datos</button></div></div></div><div class="proofBox"><h3>Subir comprobante de pago</h3><p class="muted">Este registro se almacena en Google Sheets y el archivo se guarda en Drive. La emisión del certificado requiere validación administrativa del comprobante.</p><div class="proofGrid"><div><label>Nombre completo</label><input id="payName" placeholder="Nombre del participante"></div><div><label>Correo usado en el curso</label><input id="payEmail" type="email" placeholder="correo@ejemplo.com"></div><div><label>WhatsApp / teléfono</label><input id="payPhone" placeholder="Ej.: +593 99 790 3950"></div><div><label>País / ciudad</label><input id="payCountry" placeholder="Ej.: Ecuador, Quito"></div><div><label>Método de pago</label><select id="payMethod"><option>PayPal</option><option>Banco Pichincha</option><option>Banco del Pacífico</option><option>Otro / transferencia internacional</option></select></div><div><label>Referencia / comprobante No.</label><input id="payRef" placeholder="Código de transacción o referencia"></div><div class="full"><label>Comprobante</label><input id="payFile" type="file" accept="image/png,image/jpeg,application/pdf"><div class="proofHelp">Formato recomendado: PDF, JPG o PNG. Tamaño máximo sugerido: 8 MB.</div></div><div class="full"><label>Observaciones</label><textarea id="payNotes" placeholder="Ej.: pago realizado desde cuenta de familiar, banco emisor, país, fecha aproximada."></textarea></div></div><div class="actions"><button class="green" onclick="submitPaymentProof()">Registrar comprobante</button><button class="secondary" onclick="checkPaymentStatusUI()">Consultar estado</button><button class="secondary" onclick="openWhatsApp()">Contactar por WhatsApp</button></div><div id="paymentProofFeedback"></div></div><div class="adminNote"><b>Control administrativo:</b> en la hoja <b>PAYMENTS</b>, Academia Universal cambia el estado de <b>PENDIENTE</b> a <b>VALIDADO</b> cuando el comprobante sea correcto. Solo con estado VALIDADO se habilita la emisión del certificado.</div></div></div></div>
+<div id="toast" style="position:fixed;right:18px;bottom:18px;background:#070b24;color:white;border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);display:none;z-index:99"></div>
+<script>
+const CONFIG = {
+  courseTitle: "Dise\u00f1o Instruccional 5.0 con Inteligencia Artificial", subtitle: "Creaci\u00f3n de planes did\u00e1cticos, situaciones multinivel, r\u00fabricas inteligentes, evaluaciones automatizadas y entornos interactivos de aprendizaje", institution: "Colegio de Doctores e Investigadores de Iberoamérica", collaborator: "Academia Universal", hours: 80, passingGrade: 70,
+  author: "Lic. Yordenis Ramos López, Ph.D.(c)", authorRole: "Autor y Director Académico del Curso", specialty: "Especialista en ECOSISTEMA 5.0",
+  whatsapp: "593997903950",
+  paypalUrl: "https://paypal.me/kela1984/50USD",
+  APPS_SCRIPT_WEBAPP_URL: "https://script.google.com/macros/s/AKfycbytcYSitX53vFPF30fQDgfIaSXKst8OUmCYd5M7jETc01r6rVD3R9N1Kp8zOUVwv8gQ0Q/exec" // Pegue aquí la URL /exec del Apps Script Nivel 2 cuando la implemente.
+};
+const MODULES = [{"id": 1, "hours": 12, "title": "Fundamentos del Diseño Instruccional 5.0", "purpose": "Comprender la evolución de la planificación tradicional hacia una arquitectura de experiencias formativas inteligentes, trazables, inclusivas y orientadas a productos verificables.", "product": "Mapa de arquitectura de una experiencia de aprendizaje 5.0: contexto, resultado, secuencia, recurso, evidencia, evaluación, IA, datos y mejora.", "concepts": ["Diseño instruccional como arquitectura pedagógica", "Ecosistema 5.0: humanismo, IA, datos, interacción e inclusión", "Alineación entre resultados, actividades, evidencias, evaluación y retroalimentación", "Trazabilidad académica: datos de avance, logro y mejora"], "example": "Transformar una clase expositiva en una experiencia 5.0 con diagnóstico, recurso interactivo, actividad multinivel, evidencia verificable, rúbrica, retroalimentación semaforizada y registro de progreso.", "activity": "Construya el mapa de arquitectura de una experiencia de aprendizaje 5.0: contexto educativo, audiencia, resultado de aprendizaje, secuencia didáctica, recurso interactivo, evidencia, evaluación, apoyo de IA/tecnología, datos que registraría y criterio de mejora."}, {"id": 2, "hours": 14, "title": "Planes didácticos inteligentes con IA", "purpose": "Diseñar planes didácticos completos con apoyo de IA, manteniendo criterio pedagógico, pertinencia curricular, inclusión y evaluación coherente.", "product": "Plan didáctico inteligente revisado con criterios de calidad pedagógica.", "concepts": ["Resultados de aprendizaje y desempeños observables", "Secuencia didáctica con ERCA, ABP o aula invertida", "Uso crítico de prompts para planificar, revisar y mejorar"], "example": "Crear un plan de 80 minutos para Educación Superior con objetivo, recursos, metodología, evaluación y ajustes para diversidad.", "activity": "Genere un prompt docente para construir un plan didáctico y luego mejórelo con criterios de inclusión, evaluación y pertinencia."}, {"id": 3, "hours": 14, "title": "Situaciones didácticas multinivel y simultáneas", "purpose": "Diseñar situaciones didácticas diferenciadas para atender grupos heterogéneos, niveles de desempeño y necesidades educativas diversas.", "product": "Situación didáctica multinivel y situación simultánea para un grupo real o simulado.", "concepts": ["Multinivel: acceso, proceso, producto y apoyo", "Simultaneidad didáctica en grupos heterogéneos", "Roles, estaciones, andamiajes y evidencias diferenciadas"], "example": "En una asignatura experimental, un grupo realiza simulación digital, otro analiza datos y otro construye explicación guiada con apoyo visual.", "activity": "Diseñe tres niveles de una misma actividad: básico, intermedio y avanzado; incluya apoyo docente, producto y criterio de logro."}, {"id": 4, "hours": 14, "title": "Rúbricas inteligentes y evaluación educativa automatizada", "purpose": "Construir instrumentos de evaluación con criterios claros, retroalimentación semaforizada y posibilidades de automatización.", "product": "Rúbrica analítica con niveles de logro, indicadores y banco de retroalimentaciones.", "concepts": ["Criterios, indicadores, niveles y descriptores", "Retroalimentación formativa y semaforización", "Instrumentos automatizables: rúbricas, listas de cotejo y escalas"], "example": "Crear una rúbrica para evaluar un proyecto de investigación, con criterios de problema, metodología, fuentes, producto y comunicación.", "activity": "Elabore una rúbrica de cuatro criterios y cuatro niveles con retroalimentaciones verde, amarilla y roja."}, {"id": 5, "hours": 14, "title": "Formularios, registros y analítica educativa", "purpose": "Automatizar formularios, evaluaciones y registros de aprendizaje mediante Google Sheets y Apps Script.", "product": "Formulario o evaluación conectada a una hoja de cálculo con registro de resultados.", "concepts": ["Captura de datos educativos y trazabilidad", "Google Sheets como base operativa", "Apps Script como backend ligero para registro, cálculo y reporte"], "example": "Una evaluación HTML envía nombre, correo, puntaje y retroalimentación a Sheets; el docente visualiza avance por semáforo.", "activity": "Diseñe la estructura de columnas de una hoja de registro: usuario, módulo, actividad, puntaje, estado y fecha."}, {"id": 6, "hours": 12, "title": "Entornos interactivos y simulaciones para asignaturas experimentales", "purpose": "Diseñar entornos HTML con simulaciones, casos interactivos, laboratorios virtuales y publicación en GitHub Pages.", "product": "Mini entorno de aprendizaje interactivo con simulación y evaluación integrada.", "concepts": ["HTML como contenedor de experiencias didácticas", "Simulaciones educativas y aprendizaje por indagación", "Publicación, validación y certificación digital"], "example": "Un laboratorio de química simulado permite variar temperatura, concentración y tiempo para observar efectos y responder preguntas.", "activity": "Bosqueje una simulación para una asignatura experimental: variables, interacción, evidencia y evaluación."}];
+const QUESTION_BANK = {"1": [["El Diseño Instruccional 5.0 se diferencia de una planificación tradicional porque:", ["Solo ordena contenidos y fechas", "Articula propósito, experiencia, evidencia, evaluación, tecnología, inclusión y trazabilidad", "Sustituye al docente por una herramienta de IA", "Elimina la evaluación formativa"], 1, "El enfoque 5.0 convierte la planificación en arquitectura de aprendizaje verificable."], ["En un ecosistema de aprendizaje 5.0, la IA debe actuar principalmente como:", ["Autoridad absoluta para decidir el diseño", "Asistente de codiseño supervisado por el docente", "Sustituto de la ética y la pertinencia curricular", "Elemento decorativo sin propósito pedagógico"], 1, "La IA apoya la producción, revisión y mejora; la responsabilidad sigue siendo docente."], ["La alineación pedagógica conecta de manera coherente:", ["Logotipo, colores y portada", "Resultado de aprendizaje, actividad, evidencia, evaluación y retroalimentación", "Precio del curso y número de botones", "Videos, imágenes y redes sociales sin criterio"], 1, "La calidad del diseño depende de que cada componente responda al resultado esperado."], ["Una evidencia de aprendizaje en clave 5.0 debe ser:", ["Un producto o actuación observable que demuestre logro", "Una opinión breve sin criterios", "Una actividad decorativa", "Un archivo sin relación con el objetivo"], 0, "La evidencia permite verificar el aprendizaje y orientar la mejora."], ["La trazabilidad académica sirve para:", ["Registrar datos de avance, logro, intentos y evidencias para tomar decisiones", "Acumular datos sin propósito pedagógico", "Evitar la retroalimentación", "Reemplazar la observación docente"], 0, "Registrar datos permite acompañar, mejorar y certificar procesos."], ["Un diseño inclusivo basado en DUA debe considerar:", ["Un único camino para todos", "Múltiples formas de acceso, participación, expresión y apoyo", "Menos exigencia sin criterio", "Evaluaciones ambiguas"], 1, "La inclusión se diseña desde el entorno y no como ajuste improvisado al final."], ["El mapa de arquitectura de aprendizaje 5.0 debe incluir como mínimo:", ["Contexto, resultado, experiencia, recurso, evidencia, evaluación, IA/datos y mejora", "Solo el tema y una tarea", "Una imagen y una frase motivacional", "Un listado de contenidos sin evaluación"], 0, "El mapa organiza decisiones clave para transformar la clase en experiencia."], ["Una clase expositiva se transforma en experiencia 5.0 cuando:", ["Se agregan más diapositivas sin cambiar la metodología", "Integra diagnóstico, interacción, recurso, evidencia, evaluación, retroalimentación y mejora", "Se elimina el rol del estudiante", "Solo se entrega un PDF"], 1, "La transformación ocurre cuando el estudiante produce evidencias y recibe mediación."], ["Una retroalimentación semaforizada es útil porque:", ["Comunica nivel de logro y orienta acciones concretas de mejora", "Sirve para castigar al estudiante", "Oculta errores", "Reemplaza todos los criterios de evaluación"], 0, "El semáforo facilita una lectura rápida del avance y del siguiente paso."], ["El principal criterio ético al usar IA en diseño instruccional es:", ["Delegar toda decisión en la herramienta", "Supervisar, contextualizar, proteger datos, reconocer límites y validar resultados", "Usar cualquier dato sin permiso", "Copiar respuestas sin adaptación"], 1, "La IA educativa exige supervisión humana, protección de datos y criterio pedagógico."]], "2": [["Un plan didáctico inteligente debe incluir:", ["Objetivo, secuencia, recursos, evaluación, inclusión y evidencias", "Solo una actividad entretenida", "Una lista de enlaces sin metodología", "Únicamente el nombre del tema"], 0, "Un plan completo articula propósito, mediación y evaluación."], ["Un prompt docente de calidad debe ser:", ["Vago y sin contexto", "Contextualizado, con rol, audiencia, propósito, formato y criterios", "Copiado sin revisión", "Diseñado para reemplazar al currículo"], 1, "El prompt mejora cuando delimita contexto y criterios pedagógicos."], ["El resultado de aprendizaje describe:", ["Lo que el docente dice", "Lo que el estudiante evidencia al finalizar una experiencia", "El color de la presentación", "La cantidad de archivos"], 1, "El resultado se expresa en desempeños observables."], ["La IA debe usarse en la planificación para:", ["Generar borradores que el docente revisa y adapta", "Anular la pertinencia curricular", "Evitar la evaluación", "Copiar planes sin criterio"], 0, "La IA produce insumos, no reemplaza la decisión docente."], ["Un ajuste inclusivo en un plan didáctico puede ser:", ["Eliminar al estudiante de la actividad", "Ofrecer apoyos visuales, tiempos flexibles o productos alternativos", "Reducir toda exigencia sin criterio", "Ignorar barreras"], 1, "La inclusión elimina barreras sin perder propósito formativo."]], "3": [["Una situación didáctica multinivel permite:", ["Que todos hagan lo mismo del mismo modo", "Diferenciar acceso, proceso, producto y apoyo según niveles y necesidades", "Evitar la planificación", "Separar definitivamente a los estudiantes"], 1, "La multinivelación promueve participación con apoyos graduados."], ["La simultaneidad didáctica se evidencia cuando:", ["El docente abandona al grupo", "Diferentes equipos trabajan rutas complementarias al mismo tiempo", "Solo un estudiante participa", "No existen criterios de evaluación"], 1, "La simultaneidad organiza tareas paralelas con propósito común."], ["Un andamiaje es:", ["Un apoyo temporal para favorecer desempeño autónomo progresivo", "Una sanción académica", "Un reemplazo del aprendizaje", "Una actividad sin guía"], 0, "El andamiaje sostiene el aprendizaje y se retira gradualmente."], ["En una clase experimental, una estrategia simultánea puede ser:", ["Un grupo simula, otro mide datos y otro interpreta resultados", "Todos copian el mismo párrafo", "Nadie registra evidencias", "Se elimina el trabajo práctico"], 0, "Las estaciones simultáneas favorecen roles y evidencias diversas."], ["Un criterio de logro multinivel debe:", ["Ser ambiguo", "Definir desempeño esperado en distintos grados de complejidad", "Evaluar solo asistencia", "Evitar retroalimentación"], 1, "El criterio orienta logro diferenciando niveles de desempeño."]], "4": [["Una rúbrica analítica evalúa:", ["Un solo puntaje global sin criterios", "Criterios separados con niveles y descriptores", "Solo presencia o ausencia", "Aspectos administrativos"], 1, "La rúbrica analítica desagrega criterios y niveles de logro."], ["Un descriptor de nivel debe ser:", ["Genérico e impreciso", "Observable, claro, graduado y vinculado al criterio", "Decorativo", "Igual para todos los niveles"], 1, "Los descriptores guían evaluación y retroalimentación justa."], ["La semaforización formativa se usa para:", ["Castigar al estudiante", "Comunicar nivel de logro y orientar mejora", "Ocultar resultados", "Eliminar la retroalimentación"], 1, "El semáforo ayuda a reconocer avance y necesidad de apoyo."], ["Una retroalimentación útil debe:", ["Decir solo 'mal'", "Indicar logro, brecha y acción de mejora", "Ser confusa", "Evitar ejemplos"], 1, "La retroalimentación formativa orienta el siguiente paso."], ["Una lista de cotejo se diferencia de una rúbrica porque:", ["No puede evaluar nada", "Verifica presencia o ausencia de indicadores, generalmente sin niveles extensos", "Siempre es más compleja", "Nunca usa criterios"], 1, "La lista de cotejo confirma cumplimiento de indicadores."]], "5": [["Google Sheets puede funcionar como:", ["Base operativa de registros educativos", "Editor de imágenes profesional", "Sistema de videoconferencia", "Servidor de juegos"], 0, "Sheets almacena respuestas, puntajes y trazabilidad."], ["Apps Script en este ecosistema permite:", ["Conectar el HTML con Sheets y Drive", "Eliminar la necesidad de diseño pedagógico", "Sustituir GitHub", "Crear contenidos sin revisión"], 0, "Apps Script actúa como backend ligero."], ["Una columna importante en registros de aprendizaje es:", ["Color favorito únicamente", "email, módulo, puntaje, estado y fecha", "Nombre de la mascota", "Tamaño de pantalla"], 1, "La trazabilidad requiere identificar usuario, acción, resultado y tiempo."], ["La analítica educativa básica permite:", ["Tomar decisiones de mejora a partir de datos", "Ignorar evidencias", "Ocultar dificultades", "Evitar retroalimentar"], 0, "Los datos orientan decisiones pedagógicas."], ["Un certificado verificable requiere:", ["Código único o enlace de validación", "Solo una imagen sin registro", "Un archivo sin fecha", "Ausencia de datos"], 0, "La verificación digital depende de folio y trazabilidad."]], "6": [["Un entorno HTML interactivo puede integrar:", ["Contenido, actividades, simulaciones, evaluación y rutas de progreso", "Solo texto plano sin interacción", "Únicamente imágenes decorativas", "Nada evaluable"], 0, "HTML permite articular experiencia didáctica completa."], ["Una simulación educativa debe tener:", ["Variables, interacción, observación y preguntas de análisis", "Solo colores llamativos", "Ningún propósito", "Respuestas sin relación"], 0, "La simulación permite experimentar y analizar fenómenos."], ["GitHub Pages se usa para:", ["Publicar el entorno HTML en línea", "Almacenar calificaciones directamente", "Crear rúbricas automáticamente", "Sustituir Sheets"], 0, "GitHub Pages publica sitios estáticos."], ["Una asignatura experimental se beneficia de simulaciones porque:", ["Permiten explorar fenómenos, variables y consecuencias con seguridad", "Eliminan todo razonamiento", "Evitan la indagación", "Imposibilitan la evaluación"], 0, "La simulación apoya indagación y análisis de variables."], ["El producto final del curso debe demostrar:", ["Diseño, interactividad, evaluación y trazabilidad", "Solo una portada bonita", "Un texto sin funcionalidad", "Un enlace roto"], 0, "El proyecto final integra el ecosistema aprendido."]]};
+const FINAL_QUESTIONS = [["La relación correcta en un ecosistema didáctico 5.0 es:", ["Tema → decoración → publicación", "Resultado → actividad → evidencia → evaluación → mejora", "Logo → certificado → hoja vacía", "IA → copia → entrega"], 1], ["Un plan didáctico inteligente conserva el rol del docente porque:", ["El docente valida pertinencia, ética, inclusión y coherencia", "La IA decide todo", "No se requiere contexto", "Solo importa el formato"], 0], ["Una situación multinivel busca:", ["Homogeneizar por completo", "Garantizar acceso y participación mediante apoyos diferenciados", "Eliminar criterios", "Separar sin propósito"], 1], ["Una rúbrica inteligente debe contener:", ["Criterios, niveles, descriptores y retroalimentación", "Solo una nota", "Opiniones sin evidencia", "Preguntas sin respuesta"], 0], ["Apps Script se usa como:", ["Backend ligero para conectar HTML con servicios Google", "Editor de video", "Navegador web", "Banco de imágenes"], 0], ["El certificado digital se fortalece si contiene:", ["Folio, fecha, nota, horas y enlace de validación", "Solo el nombre", "Ningún registro", "Imagen sin datos"], 0], ["Una simulación didáctica exige:", ["Variables manipulables y preguntas de análisis", "Ausencia de objetivos", "Desorden de acciones", "Evaluación irrelevante"], 0], ["La retroalimentación semaforizada permite:", ["Orientar mejora según niveles de logro", "Ocultar fallos", "Evitar aprendizaje", "Eliminar seguimiento"], 0], ["El producto final de este curso debe ser:", ["Un mini entorno o recurso didáctico interactivo con evaluación", "Un comentario informal", "Una captura sin función", "Un archivo vacío"], 0], ["La ética en IA educativa implica:", ["Transparencia, protección de datos, supervisión humana y pertinencia pedagógica", "Usar datos sin permiso", "Copiar sin citar", "Delegar todo a la máquina"], 0]];
+const STORAGE_KEY = "DISENO_INSTRUCCIONAL_5IA_V15_PROGRESS";
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)||'null') || {user:null, resources:{}, activities:{}, moduleEvals:{}, finalEval:null, cert:null, payment:null, courseResources:null};
+if(!state.payment) state.payment=null;
+if(!state.courseResources) state.courseResources=null;
+function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); renderAll(); }
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.style.display='block'; setTimeout(()=>t.style.display='none',3200); }
+function apiRequest(action,payload){
+  if(!CONFIG.APPS_SCRIPT_WEBAPP_URL) return Promise.resolve({ok:false, local:true, message:'Backend pendiente'});
+  return new Promise(resolve=>{
+    const cb='__v11cb_'+Date.now()+'_'+Math.random().toString(36).slice(2); const script=document.createElement('script'); const timer=setTimeout(()=>{cleanup();resolve({ok:false,error:'Tiempo de espera agotado'})},15000);
+    function cleanup(){clearTimeout(timer); try{delete window[cb]}catch(e){window[cb]=undefined}; if(script.parentNode) script.parentNode.removeChild(script)}
+    window[cb]=data=>{cleanup(); resolve(data||{ok:false,error:'Respuesta vacía'})}; script.onerror=()=>{cleanup();resolve({ok:false,error:'No se pudo conectar'})};
+    const url=new URL(CONFIG.APPS_SCRIPT_WEBAPP_URL); url.searchParams.set('action',action); url.searchParams.set('payload',JSON.stringify(payload||{})); url.searchParams.set('callback',cb); script.src=url.toString(); document.body.appendChild(script);
+  });
+}
+
+function openPayPal(){ window.open(CONFIG.paypalUrl || 'https://paypal.me/kela1984/50USD','_blank','noopener'); }
+function openWhatsApp(){ const msg=encodeURIComponent('Hola, deseo inscribirme en el curso Diseño Instruccional 5.0 con Inteligencia Artificial. Valor: USD 50. Quiero información para pago o envío de comprobante.'); window.open('https://wa.me/'+(CONFIG.whatsapp||'593997903950')+'?text='+msg,'_blank','noopener'); }
+function openPaymentModal(){ document.getElementById('paymentModal')?.classList.add('active'); if(state.user){ const n=document.getElementById('payName'), e=document.getElementById('payEmail'); if(n&&!n.value)n.value=state.user.name||''; if(e&&!e.value)e.value=state.user.email||''; } }
+function closePaymentModal(){ document.getElementById('paymentModal')?.classList.remove('active'); }
+function copyText(text){ navigator.clipboard?.writeText(text).then(()=>toast('Datos copiados al portapapeles.')).catch(()=>toast(text)); }
+function showSection(id){ const target=document.getElementById(id); if(!target) return; document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); target.classList.add('active'); document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.sec===id)); setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),40); }
+function setupNav(){ const items=[['inicio','Inicio'],['ruta','Ruta'],['recursos','Repositorio'],['actividades','Actividades'],['evaluaciones','Evaluaciones'],['final','Proyecto final'],['pagos','Pagos'],['certificado','Certificado'],['autor','Autor']]; document.getElementById('nav').innerHTML=items.map(([id,txt])=>`<button data-sec="${id}" onclick="showSection('${id}')">${txt}</button>`).join(''); }
+function paymentAccessActive(){ return !!(state.payment && ['PENDIENTE','VALIDADO'].includes(String(state.payment.status||'').toUpperCase())); }
+function moduleState(id){ if(moduleComplete(id)) return 'done'; if(!state.user) return 'locked'; if(paymentAccessActive()) return 'available'; if(id===1) return 'available'; return state.moduleEvals[id-1]?.approved ? 'available' : 'locked'; }
+function goModule(id){ if(!state.user){ showSection('inicio'); toast('Primero registre su identidad.'); return; } if(!moduleUnlocked(id)){ showSection('ruta'); toast('Módulo bloqueado. Complete el anterior o cargue comprobante para habilitar acceso premium.'); return; } showSection('recursos'); setTimeout(()=>{ const el=document.getElementById('resourceContent'); if(el){ resourceTab('mods', document.querySelector('.tabs button')); } },80); }
+function renderModuleDock(){ const box=document.getElementById('moduleDock'); if(!box) return; const lead='<span class="moduleDockTitle">Ruta modular</span>'; const mods=MODULES.map(m=>{const st=moduleState(m.id); const icon=st==='done'?'✓':st==='available'?'●':'🔒'; return `<button class="modPill ${st}" onclick="goModule(${m.id})">${icon} M${m.id}</button>`}).join(''); const pay='<button class="modPill pay" onclick="showSection(\'pagos\')">💳 Pago / comprobante</button>'; box.innerHTML=lead+mods+pay; }
+function moduleUnlocked(id){ if(!state.user) return false; if(paymentAccessActive()) return true; if(id===1) return true; const prev=state.moduleEvals[id-1]; return !!(prev&&prev.approved); }
+function moduleComplete(id){ const ev=state.moduleEvals[id]; return !!(state.resources[id]&&state.activities[id]&&ev&&ev.approved); }
+function allModulesComplete(){ return MODULES.every(m=>moduleComplete(m.id)); }
+function progressPercent(){ let total=1+MODULES.length*3+1+1, done=0; if(state.user) done++; MODULES.forEach(m=>{if(state.resources[m.id])done++; if(state.activities[m.id])done++; if(state.moduleEvals[m.id]?.approved)done++;}); if(state.finalEval?.approved)done++; if(state.cert?.code)done++; return Math.round(done/total*100); }
+function renderStatus(){ const p=progressPercent(); document.getElementById('percent').textContent=p+'%'; document.getElementById('bar').style.width=p+'%'; const paid=paymentAccessActive(); const rows=[['Identidad',!!state.user],['Acceso', paid?'premium':'secuencial'],['Módulos',MODULES.filter(m=>moduleComplete(m.id)).length+'/'+MODULES.length],['Pago', state.payment?.status || 'SIN REGISTRO'],['Evaluación final',!!state.finalEval?.approved],['Certificado',!!state.cert?.code]]; document.getElementById('statusList').innerHTML=rows.map(r=>{let done=(r[1]===true)||String(r[1]).startsWith('6/')||String(r[1]).toUpperCase()==='VALIDADO'; let cls=done?'done':String(r[1]).toUpperCase()==='PENDIENTE'?'pending':'locked'; return `<div class="statusRow"><span>${r[0]}</span><span class="badge ${cls}">${r[1]===true?'completado':r[1]===false?'pendiente':r[1]}</span></div>`}).join(''); const am=document.getElementById('accessMode'); if(am){ am.innerHTML= paid ? '<b>Modo de acceso premium activo</b><div class="panelGuide">Comprobante cargado. Los módulos quedan disponibles para avanzar; el certificado exige validación administrativa y aprobación académica.</div>' : '<b>Modo de acceso secuencial</b><div class="panelGuide">Módulo 1 disponible tras registro. Los demás se desbloquean al aprobar el módulo anterior. Al cargar comprobante se habilitan todos los módulos.</div>'; } const mini=document.getElementById('miniProgress'); if(mini){ mini.innerHTML=MODULES.map(m=>{const st=moduleState(m.id); return `<div class="miniMod ${st==='done'?'done':st==='available'?'open':'locked'}">M${m.id}<br>${st==='done'?'aprobado':st==='available'?'abierto':'bloqueado'}</div>`}).join(''); } document.getElementById('nextStep').textContent=nextStepText(); const cn=document.getElementById('certName'); if(cn) cn.textContent=state.user?.name || 'Participante'; renderModuleDock(); }
+function nextStepText(){ if(!state.user) return 'Registre su identidad para habilitar el Módulo 1.'; if(!paymentAccessActive()) { for(const m of MODULES){ if(moduleUnlocked(m.id)&&!state.resources[m.id]) return `Revise la presentación del Módulo ${m.id}.`; if(moduleUnlocked(m.id)&&!state.activities[m.id]) return `Complete la actividad aplicada del Módulo ${m.id}.`; if(moduleUnlocked(m.id)&&!state.moduleEvals[m.id]?.approved) return `Apruebe la evaluación modular del Módulo ${m.id}.`; } } else { for(const m of MODULES){ if(!state.resources[m.id]) return `Acceso premium activo: revise la presentación del Módulo ${m.id}.`; if(!state.activities[m.id]) return `Acceso premium activo: complete la actividad del Módulo ${m.id}.`; if(!state.moduleEvals[m.id]?.approved) return `Acceso premium activo: apruebe la evaluación del Módulo ${m.id}.`; } } if(!state.finalEval?.approved) return 'Realice la evaluación final integradora.'; if(String(state.payment?.status||'').toUpperCase()!=='VALIDADO') return 'Consulte la validación administrativa del pago antes de certificar.'; if(!state.cert?.code) return 'Genere el certificado digital.'; return 'Ruta completada.'; }
+function nextAction(){ if(!state.user) return showSection('inicio'); for(const m of MODULES){ if(moduleUnlocked(m.id)&&!state.resources[m.id]) return showSection('recursos'); if(moduleUnlocked(m.id)&&!state.activities[m.id]) return showSection('actividades'); if(moduleUnlocked(m.id)&&!state.moduleEvals[m.id]?.approved) return showSection('evaluaciones'); } if(!state.finalEval?.approved) return showSection('final'); showSection('certificado'); }
+function registerUser(){ const name=document.getElementById('name').value.trim(); const email=document.getElementById('email').value.trim().toLowerCase(); const cohort=document.getElementById('cohort').value.trim(); if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ document.getElementById('identityFeedback').innerHTML='<div class="feedback bad">Complete nombre y correo válido.</div>'; return; } apiRequest('registerUser',{name,email,cohort,course:CONFIG.courseTitle}).then(r=>{ state.user={name,email,cohort}; save(); document.getElementById('identityFeedback').innerHTML='<div class="feedback ok"><b>Identidad registrada.</b> Se activó el recorrido formativo. El Módulo 1 queda disponible con presentación, actividad y evaluación visibles en el flujo.</div>'; toast(r.local?'Registro local. Pegue URL de Apps Script para registrar en Sheets.':'Registro enviado a Sheets.'); setTimeout(()=>{showSection('recursos'); resourceTab('mods', document.querySelector('.tabs button'));},650); }); }
+
+function preRegisterLead(){
+  const name=document.getElementById('leadName').value.trim();
+  const email=document.getElementById('leadEmail').value.trim().toLowerCase();
+  const phone=document.getElementById('leadPhone').value.trim();
+  const country=document.getElementById('leadCountry').value.trim();
+  const interest=document.getElementById('leadInterest').value.trim();
+  const fb=document.getElementById('leadFeedback');
+  if(!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    fb.innerHTML='<div class="feedback bad">Complete nombre y correo válido para registrar la preinscripción.</div>'; return;
+  }
+  apiRequest('preRegisterLead',{name,email,phone,country,interest,course:CONFIG.courseTitle,source:'landing_course_v13'}).then(r=>{
+    fb.innerHTML='<div class="feedback ok">Preinscripción registrada. Academia Universal podrá contactarle para ampliar información o acompañar su inscripción.</div>';
+    toast(r.local?'Preinscripción guardada localmente. Pegue URL de Apps Script para registrar en Sheets.':'Preinscripción enviada a Sheets.');
+  });
+}
+
+function moduleFlowHTML(context){
+  const label = context==='recursos' ? 'Recursos' : context==='actividades' ? 'Actividades' : context==='evaluaciones' ? 'Evaluaciones' : 'Ruta';
+  const desc = context==='recursos' ? 'Abra la presentación HTML del módulo y márquela como revisada para activar su actividad.' : context==='actividades' ? 'Complete la evidencia aplicada del módulo para habilitar la evaluación modular.' : context==='evaluaciones' ? 'Apruebe la evaluación del módulo con 70/100 o más para desbloquear el siguiente tramo.' : 'La ruta muestra el estado real de cada módulo y orienta el siguiente paso.';
+  const steps = MODULES.map(m=>{ const st=moduleState(m.id); const cls=st==='done'?'done':st==='available'?'available':'locked'; const txt=st==='done'?'Aprobado':st==='available'?'Disponible':'Bloqueado'; return `<button class="flowStep ${cls}" onclick="goModule(${m.id})">M${m.id}<small>${txt}</small></button>`; }).join('');
+  return `<div class="flowSummary"><div><b>${label}: navegación modular vinculada</b><span>${desc}</span></div><div class="flowSteps">${steps}</div></div>`;
+}
+function renderFlowHeaders(){
+  const map={routeFlowHeader:'ruta',moduleFlowHeaderResources:'recursos',moduleFlowHeaderActivities:'actividades',moduleFlowHeaderEvaluations:'evaluaciones'};
+  Object.entries(map).forEach(([id,ctx])=>{ const el=document.getElementById(id); if(el) el.innerHTML=moduleFlowHTML(ctx); });
+}
+
+function renderRoute(){ document.getElementById('routeModules').innerHTML=MODULES.map(m=>moduleCard(m,true)).join(''); }
+function moduleCard(m,resources=true){ const unlocked=moduleUnlocked(m.id); const complete=moduleComplete(m.id); const cardCls=complete?'completedCard':unlocked?'availableCard':'disabled lockedCard'; const ev=state.moduleEvals[m.id]; const st=complete?'APROBADO':unlocked?'DISPONIBLE':'BLOQUEADO'; return `<div class="module ${cardCls}"><div class="moduleHead"></div><div class="moduleBody"><div class="modNum">${m.id}</div><h3>${m.title}</h3><p class="muted">${m.purpose}</p><p><b>Producto:</b> ${m.product}</p><span class="badge ${complete?'done':unlocked?'availableBadge':'locked'}">${st}</span>${ev?` <span class="badge ${ev.approved?'done':'pending'}">${ev.score}/100</span>`:''}${resources?`<div class="actions"><button onclick="openPresentation(${m.id})" ${!unlocked?'disabled':''}>Abrir presentación</button><button class="secondary" onclick="markResource(${m.id})" ${!unlocked?'disabled':''}>Marcar revisada</button><button class="gold" onclick="showActivity(${m.id})" ${!state.resources[m.id]?'disabled':''}>Actividad</button><button class="green" onclick="showModuleEval(${m.id})" ${!state.activities[m.id]?'disabled':''}>Evaluación</button></div>`:''}</div></div>`; }
+function resourceTab(tab,btn){ document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active')); if(btn) btn.classList.add('active'); const c=document.getElementById('resourceContent'); if(!c) return; if(tab==='mods') c.innerHTML=`<div class="modules">${MODULES.map(m=>moduleCard(m,true)).join('')}</div>`; if(tab==='repo') renderCourseRepository(c); if(tab==='tools') c.innerHTML='<div class="resourceGrid"><div class="card"><h3>IA para diseño</h3><p>ChatGPT, Gemini, Claude, Perplexity.</p></div><div class="card"><h3>Automatización</h3><p>Google Forms, Sheets, Apps Script.</p></div><div class="card"><h3>Publicación</h3><p>GitHub Pages, Drive y recursos HTML.</p></div></div>'; }
+function repositoryUnlocked(){ return String(state.payment?.status||'').toUpperCase()==='VALIDADO'; }
+async function loadCourseResources(force=false){
+  if(!force && state.courseResources && state.courseResources.loadedFor===(state.user?.email||'')) return state.courseResources;
+  const email=(state.user?.email||document.getElementById('email')?.value||'').trim().toLowerCase();
+  const r=await apiRequest('getCourseResources',{email});
+  if(r && r.ok){
+    state.courseResources={loadedFor:email, paymentValidated:!!r.paymentValidated, paymentStatus:r.paymentStatus||'SIN_REGISTRO', resources:r.resources||[]};
+    if(r.paymentStatus){ state.payment=Object.assign({}, state.payment||{}, {status:r.paymentStatus, validated:!!r.paymentValidated}); }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    renderStatus();
+  }
+  return state.courseResources;
+}
+function renderCourseRepository(container){
+  container.innerHTML='<div class="repoIntro"><div><h3>Repositorio del curso</h3><p>Folletos, guías y paquetes técnicos oficiales del programa. El folleto general es público; los demás recursos se habilitan con pago <b>VALIDADO</b>.</p></div><div class="repoState">Estado: '+escapeHtml(String(state.payment?.status||'SIN REGISTRO'))+'</div></div><div class="repoEmpty">Cargando recursos oficiales...</div>';
+  loadCourseResources(true).then(data=>{
+    const resources=(data&&data.resources)||[];
+    const status=(data&&data.paymentStatus)||state.payment?.status||'SIN_REGISTRO';
+    const top='<div class="repoIntro"><div><h3>Repositorio del curso</h3><p>Folletos, guías de trabajo, recursos técnicos y paquetes descargables. El acceso a guías y ZIP se activa cuando el pago esté <b>VALIDADO</b> en Academia Universal.</p></div><div class="repoState">Pago: '+escapeHtml(String(status))+'</div></div>';
+    if(!resources.length){ container.innerHTML=top+'<div class="repoEmpty">No hay recursos activos en la pestaña RESOURCES. Revise que la hoja tenga filas con estado ACTIVO.</div>'; return; }
+    container.innerHTML=top+'<div class="repoGrid">'+resources.map(repoCard).join('')+'</div><div class="repoNote"><b>Importante:</b> si ya realizó el pago y aún ve recursos bloqueados, use el botón <b>Consultar estado</b> en la sección Pagos o espere la validación administrativa.</div><div class="actions"><button class="repoRefresh" onclick="refreshRepository()">Actualizar repositorio</button><button class="secondary" onclick="showSection(\'pagos\')">Ir a pagos</button></div>';
+  }).catch(err=>{ container.innerHTML='<div class="repoEmpty">No se pudo cargar el repositorio. Verifique la URL /exec de Apps Script y la pestaña RESOURCES.</div>'; console.error(err); });
+}
+function repoCard(r){
+  const available=!!r.disponible;
+  const publico=!!r.publico;
+  const cls=publico?'public':available?'':'lockedRepo';
+  const access=available?(publico?'Público':'Disponible'):'Bloqueado';
+  const accessCls=available?'ok':'lock';
+  const action=available && r.url ? `<a class="btn ${publico?'green':''}" href="${escapeHtml(r.url)}" target="_blank" rel="noopener">Descargar ${escapeHtml(r.tipo||'recurso')}</a>` : `<button disabled>Bloqueado</button>`;
+  return `<div class="repoCard ${cls}"><div class="repoTop"></div><div class="repoBody"><div class="repoMeta"><span class="repoType">${escapeHtml(r.tipo||'RECURSO')}</span><span class="repoAccess ${accessCls}">${access}</span>${r.modulo?`<span class="repoType">Módulo ${escapeHtml(r.modulo)}</span>`:''}</div><h3>${escapeHtml(r.titulo||'Recurso del curso')}</h3><p class="muted">${escapeHtml(r.descripcion||'Material oficial del curso.')}</p>${!available?`<p class="small"><b>Condición:</b> ${escapeHtml(r.motivo||'Requiere pago validado.')}</p>`:''}<div class="repoActions">${action}</div></div></div>`;
+}
+function refreshRepository(){ state.courseResources=null; const btn=[...document.querySelectorAll('.tabs button')].find(b=>b.textContent.includes('Guías')); resourceTab('repo',btn); }
+
+function getPublicBrochureResource(){
+  const list=(state.courseResources&&state.courseResources.resources)||[];
+  return list.find(r=>String(r.id||'').toLowerCase()==='brochure') || list.find(r=>!!r.publico && String(r.tipo||'').toUpperCase()==='PDF');
+}
+async function openPublicBrochure(){
+  const hint=document.getElementById('publicBrochureHint');
+  if(hint) hint.textContent='Buscando enlace público del folleto oficial...';
+  try{
+    const data=await loadCourseResources(true);
+    const brochure=getPublicBrochureResource();
+    if(brochure && brochure.url){
+      if(hint) hint.textContent='Folleto oficial disponible. Se abrirá en una nueva pestaña.';
+      window.open(brochure.url,'_blank','noopener');
+      return;
+    }
+    if(hint) hint.textContent='No se encontró la fila brochure en RESOURCES o falta la URL. Revise Google Sheets.';
+    toast('Falta configurar el enlace del folleto público en RESOURCES.');
+  }catch(e){
+    if(hint) hint.textContent='No se pudo conectar con el repositorio. Revise Apps Script y RESOURCES.';
+    toast('No se pudo cargar el folleto público.');
+  }
+}
+async function hydratePublicBrochureCard(){
+  const hint=document.getElementById('publicBrochureHint');
+  if(!hint) return;
+  try{
+    await loadCourseResources(false);
+    const brochure=getPublicBrochureResource();
+    if(brochure && brochure.url){
+      hint.innerHTML='Recurso público configurado: <b>'+escapeHtml(brochure.titulo||'Folleto oficial del curso')+'</b>.';
+    }else{
+      hint.textContent='Pendiente: configure en RESOURCES la fila brochure con publico=SI, estado=ACTIVO y URL del PDF.';
+    }
+  }catch(e){
+    hint.textContent='El botón se activará cuando Apps Script responda con la pestaña RESOURCES.';
+  }
+}
+
+function markResource(id){ if(!moduleUnlocked(id)) return; apiRequest('markResource',{email:state.user.email,module:id,course:CONFIG.courseTitle}).then(r=>{state.resources[id]=true;save();toast(r.local?'Recurso marcado en modo local.':'Recurso registrado en Sheets.')}); }
+function showActivity(id){
+  showSection('actividades');
+  const m=MODULES.find(x=>x.id===id);
+  document.getElementById('activityArea').innerHTML=`<div class="card"><h3>Módulo ${id}: ${m.title}</h3><p><b>Consigna:</b> ${m.activity}</p><p class="muted">Evidencia esperada: explique la propuesta y, si ya tiene un producto elaborado, adjúntelo en PDF, Word, imagen o captura. Esta evidencia se registra para trazabilidad académica.</p><textarea id="actText" placeholder="Escriba su evidencia aplicada. Incluya contexto, audiencia, resultado, secuencia, recurso, evaluación, IA/tecnología y criterio de mejora.">${state.activities[id]?.text||''}</textarea><div class="activityUploadBox"><label>Archivo de evidencia del producto</label><input id="actFile" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.ppt,.pptx,.xlsx,.xls"><div class="evidenceNote">Opcional, pero recomendado. Tamaño sugerido: hasta 12 MB. Ejemplos: mapa de arquitectura, ficha didáctica, rúbrica, captura del recurso o producto final.</div></div><div class="actions"><button class="green" onclick="submitActivity(${id})">Enviar actividad y evidencia</button><button class="secondary" onclick="showModuleEval(${id})" ${state.activities[id]?'':'disabled'}>Ir a evaluación</button></div><div id="actFeedback"></div></div>`;
+}
+async function submitActivity(id){
+  const text=document.getElementById('actText').value.trim();
+  const file=document.getElementById('actFile')?.files?.[0] || null;
+  const fb=document.getElementById('actFeedback');
+  if(text.length<280){fb.innerHTML='<div class="feedback warn">Amplíe la evidencia: debe explicar contexto, decisión didáctica, producto, evaluación y apoyo tecnológico.</div>'; return;}
+  if(file && file.size>12*1024*1024){fb.innerHTML='<div class="feedback bad">El archivo supera 12 MB. Reduzca el tamaño e intente nuevamente.</div>'; return;}
+  fb.innerHTML='<div class="feedback warn">Registrando actividad y evidencia académica...</div>';
+  const m=MODULES.find(x=>x.id===id);
+  let payload={email:state.user.email,name:state.user.name,module:id,activityTitle:m?.title||('Módulo '+id),text,course:CONFIG.courseTitle};
+  try{
+    if(file){ payload.fileName=file.name; payload.mimeType=file.type || 'application/octet-stream'; payload.fileBase64=await fileToBase64(file); const r=await apiFormPost('submitModuleEvidence',payload); state.activities[id]={text,approved:true,fileName:file.name,date:new Date().toLocaleString()}; localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); renderStatus(); fb.innerHTML='<div class="feedback ok">Actividad y archivo de evidencia registrados. Ahora puede realizar la evaluación modular.<br><br><button class="green" onclick="showModuleEval('+id+')">Ir a evaluación modular</button></div>'; toast('Evidencia académica enviada para trazabilidad.'); }
+    else { apiRequest('markActivity',payload).then(r=>{state.activities[id]={text,approved:true,date:new Date().toLocaleString()};save(); const box=document.getElementById('actFeedback'); if(box) box.innerHTML='<div class="feedback ok">Actividad registrada. Ahora puede realizar la evaluación modular.</div>';toast(r.local?'Actividad guardada localmente.':'Actividad enviada a Sheets.');}); }
+  }catch(err){ fb.innerHTML='<div class="feedback bad">No se pudo registrar la evidencia: '+escapeHtml(String(err))+'</div>'; }
+}
+function renderActivities(){
+  if(!state.user){document.getElementById('activityArea').innerHTML='<div class="feedback warn">Registre su identidad para activar actividades.</div>';return}
+  document.getElementById('activityArea').innerHTML='<div class="modules">'+MODULES.map(m=>{
+    const hasActivity=!!state.activities[m.id];
+    const ev=state.moduleEvals[m.id];
+    const cls=!state.resources[m.id]?'disabled lockedCard':ev?.approved?'completedCard activityCard evaluatedActivity':hasActivity?'availableCard activityCard completedActivity':'availableCard activityCard';
+    const status=ev?.approved?'Módulo aprobado':hasActivity?'Actividad completada · evaluación pendiente':'Actividad pendiente';
+    const badgeCls=ev?.approved?'done':hasActivity?'activityDone':'pending';
+    return `<div class="module ${cls}"><div class="moduleBody"><div class="modNum">${m.id}</div><h3>${m.title}</h3><p>${m.activity}</p><span class="badge ${badgeCls}">${status}</span>${hasActivity&&!ev?.approved?' <span class="badge evalPending">Evaluación pendiente</span>':''}<div class="actions"><button onclick="showActivity(${m.id})" ${!state.resources[m.id]?'disabled':''}>${hasActivity?'Revisar / editar actividad':'Abrir actividad'}</button><button class="green" onclick="showModuleEval(${m.id})" ${!hasActivity?'disabled':''}>Evaluación</button></div></div></div>`;
+  }).join('')+'</div>';
+}
+function showModuleEval(id){ showSection('evaluaciones'); const m=MODULES.find(x=>x.id===id); const qs=QUESTION_BANK[id]; document.getElementById('moduleEvalArea').innerHTML=`<h3>Módulo ${id}: ${m.title}</h3><p class="muted">Seleccione la respuesta correcta. Aprobación mínima: 70/100.</p>${qs.map((q,i)=>`<div class="quizBox"><strong>${i+1}. ${q[0]}</strong>${q[1].map((op,k)=>`<label><input type="radio" name="mq${id}_${i}" value="${k}"> ${String.fromCharCode(65+k)}. ${op}</label>`).join('')}</div>`).join('')}<div class="actions"><button class="green" onclick="submitModuleEval(${id})">Calificar módulo</button></div><div id="evalFeedback"></div>`; }
+function submitModuleEval(id){ const qs=QUESTION_BANK[id]; let correct=0,total=qs.length; qs.forEach((q,i)=>{ const v=document.querySelector(`input[name="mq${id}_${i}"]:checked`); if(v&&Number(v.value)===q[2]) correct++; }); const score=Math.round(correct/total*100); const approved=score>=CONFIG.passingGrade; apiRequest('submitModuleEvaluation',{email:state.user.email,name:state.user.name,module:id,score,correct,total,approved,course:CONFIG.courseTitle}).then(r=>{ state.moduleEvals[id]={score,correct,total,approved,date:new Date().toLocaleString()}; save(); document.getElementById('evalFeedback').innerHTML=`<div class="feedback ${approved?'ok':'bad'}">Resultado: ${score}/100. ${approved?'Módulo aprobado. Se desbloquea el siguiente módulo.':'Debe reforzar y volver a intentarlo.'}</div>`; toast(r.local?'Evaluación guardada localmente.':'Evaluación enviada a Sheets.'); }); }
+function renderModuleEvalArea(){ if(!state.user){document.getElementById('moduleEvalArea').innerHTML='<div class="feedback warn">Registre su identidad para activar evaluaciones.</div>';return} document.getElementById('moduleEvalArea').innerHTML='<div class="modules">'+MODULES.map(m=>`<div class="module ${!state.activities[m.id]?'disabled':''}"><div class="moduleBody"><div class="modNum">${m.id}</div><h3>${m.title}</h3><p class="muted">${state.moduleEvals[m.id]?`Última nota: ${state.moduleEvals[m.id].score}/100`:'Evaluación pendiente.'}</p><span class="badge ${state.moduleEvals[m.id]?.approved?'done':'pending'}">${state.moduleEvals[m.id]?.approved?'aprobada':'pendiente'}</span><div class="actions"><button onclick="showModuleEval(${m.id})" ${!state.activities[m.id]?'disabled':''}>Abrir evaluación</button></div></div></div>`).join('')+'</div>'; }
+function renderFinal(){ const area=document.getElementById('finalEvalArea'); if(!allModulesComplete()){area.innerHTML='<div class="feedback warn">La evaluación final se habilita al completar y aprobar los 6 módulos.</div>'; return} if(state.finalEval?.approved){area.innerHTML=`<div class="feedback ok">Evaluación final aprobada: ${state.finalEval.score}/100. Puede generar el certificado.</div>`; return} area.innerHTML=`${FINAL_QUESTIONS.map((q,i)=>`<div class="quizBox"><strong>${i+1}. ${q[0]}</strong>${q[1].map((op,k)=>`<label><input type="radio" name="fq_${i}" value="${k}"> ${String.fromCharCode(65+k)}. ${op}</label>`).join('')}</div>`).join('')}<label>Síntesis del proyecto final</label><textarea id="projectSummary" placeholder="Describa brevemente el entorno, recurso o producto 5.0 que desarrollará."></textarea><div class="actions"><button class="green" onclick="submitFinalEval()">Calificar evaluación final</button></div><div id="finalFeedback"></div>`; }
+function submitFinalEval(){ let correct=0,total=FINAL_QUESTIONS.length; FINAL_QUESTIONS.forEach((q,i)=>{ const v=document.querySelector(`input[name="fq_${i}"]:checked`); if(v&&Number(v.value)===q[2]) correct++; }); const summary=(document.getElementById('projectSummary')?.value||'').trim(); let score=Math.round(correct/total*100); if(summary.length<120) score=Math.max(0,score-10); const approved=score>=CONFIG.passingGrade; apiRequest('submitFinalEvaluation',{email:state.user.email,name:state.user.name,score,correct,total,approved,summary,course:CONFIG.courseTitle}).then(r=>{state.finalEval={score,correct,total,approved,summary};save();document.getElementById('finalFeedback').innerHTML=`<div class="feedback ${approved?'ok':'bad'}">Resultado final: ${score}/100. ${approved?'Aprobado. Puede generar certificado.':'Debe reforzar y repetir evaluación.'}</div>`;toast(r.local?'Evaluación final guardada localmente.':'Evaluación final enviada a Sheets.')}); }
+
+function escapeHtml(value){
+  return String(value ?? '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
+}
+
+function fileToBase64(file){ return new Promise((resolve,reject)=>{ const r=new FileReader(); r.onload=()=>resolve(String(r.result).split(',')[1]||''); r.onerror=reject; r.readAsDataURL(file); }); }
+function apiPost(action,payload){ if(!CONFIG.APPS_SCRIPT_WEBAPP_URL) return Promise.resolve({ok:false, local:true, message:'Backend pendiente'}); return fetch(CONFIG.APPS_SCRIPT_WEBAPP_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({action,payload}),headers:{'Content-Type':'text/plain;charset=utf-8'}}).then(()=>({ok:true, opaque:true, message:'Solicitud enviada al backend.'})).catch(err=>({ok:false,error:String(err)})); }
+
+function apiFormPost(action,payload){
+  if(!CONFIG.APPS_SCRIPT_WEBAPP_URL) return Promise.resolve({ok:false, local:true, message:'Backend pendiente'});
+  return new Promise(resolve=>{
+    const frameName='paymentFrame_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+    const iframe=document.createElement('iframe');
+    iframe.name=frameName;
+    iframe.style.display='none';
+    const form=document.createElement('form');
+    form.method='POST';
+    form.action=CONFIG.APPS_SCRIPT_WEBAPP_URL;
+    form.target=frameName;
+    form.style.display='none';
+    form.enctype='application/x-www-form-urlencoded';
+    const a=document.createElement('input');
+    a.type='hidden'; a.name='action'; a.value=action;
+    const p=document.createElement('textarea');
+    p.name='payload'; p.value=JSON.stringify(payload||{});
+    form.appendChild(a); form.appendChild(p);
+    document.body.appendChild(iframe); document.body.appendChild(form);
+    let done=false;
+    function cleanup(){ setTimeout(()=>{try{form.remove();iframe.remove();}catch(e){}},1200); }
+    const timer=setTimeout(()=>{ if(!done){ done=true; cleanup(); resolve({ok:true, submitted:true, message:'Comprobante enviado al backend. Verifique estado en unos segundos.'}); } }, 9000);
+    iframe.onload=function(){ if(!done){ done=true; clearTimeout(timer); cleanup(); resolve({ok:true, submitted:true, message:'Comprobante enviado al backend.'}); } };
+    try{ form.submit(); }catch(err){ done=true; clearTimeout(timer); cleanup(); resolve({ok:false,error:String(err)}); }
+  });
+}
+async function submitPaymentProof(){
+  const name=(document.getElementById('payName')?.value||state.user?.name||'').trim();
+  const email=(document.getElementById('payEmail')?.value||state.user?.email||'').trim().toLowerCase();
+  const phone=(document.getElementById('payPhone')?.value||'').trim();
+  const country=(document.getElementById('payCountry')?.value||'').trim();
+  const paymentMethod=(document.getElementById('payMethod')?.value||'').trim();
+  const transactionRef=(document.getElementById('payRef')?.value||'').trim();
+  const notes=(document.getElementById('payNotes')?.value||'').trim();
+  const file=document.getElementById('payFile')?.files?.[0];
+  const fb=document.getElementById('paymentProofFeedback');
+  if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ if(fb) fb.innerHTML='<div class="feedback bad">Complete nombre y correo válido.</div>'; return; }
+  if(!paymentMethod){ if(fb) fb.innerHTML='<div class="feedback bad">Seleccione método de pago.</div>'; return; }
+  if(!file){ if(fb) fb.innerHTML='<div class="feedback bad">Adjunte el comprobante de pago.</div>'; return; }
+  if(file.size>8*1024*1024){ if(fb) fb.innerHTML='<div class="feedback bad">El archivo supera 8 MB. Reduzca el tamaño e intente nuevamente.</div>'; return; }
+  if(fb) fb.innerHTML='<div class="feedback warn">Cargando comprobante. Espere unos segundos...</div>';
+  try{
+    const fileBase64=await fileToBase64(file);
+    const payload={name,email,phone,country,paymentMethod,amountUsd:50,transactionRef,notes,fileName:file.name,mimeType:file.type,fileBase64,course:CONFIG.courseTitle};
+    const r=await apiFormPost('submitPaymentProof',payload);
+    if(r.ok){ state.payment={status:'PENDIENTE',method:paymentMethod,date:new Date().toLocaleString()}; save(); if(fb) fb.innerHTML='<div class="feedback ok">Comprobante enviado. Estado: <b>PENDIENTE DE VALIDACIÓN</b>. Academia Universal revisará el pago antes de emitir el certificado.</div>'; toast('Comprobante enviado para validación administrativa.'); }
+    else { if(fb) fb.innerHTML='<div class="feedback bad">No se pudo enviar el comprobante. Revise que la URL /exec esté pegada en el index.html o envíelo por WhatsApp.</div>'; }
+  }catch(err){ if(fb) fb.innerHTML='<div class="feedback bad">Error al procesar archivo: '+escapeHtml(String(err))+'</div>'; }
+}
+function checkPaymentStatusUI(){
+  const email=(document.getElementById('payEmail')?.value||state.user?.email||document.getElementById('email')?.value||'').trim().toLowerCase();
+  const fb=document.getElementById('paymentProofFeedback');
+  const certBox=document.getElementById('certPaymentStatus');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ 
+    if(fb) fb.innerHTML='<div class="feedback warn">Ingrese o registre el mismo correo usado para subir el comprobante.</div>'; 
+    if(certBox) certBox.innerHTML='<span class="paymentStatusPill none">Correo no válido</span>'; 
+    return; 
+  }
+  if(fb) fb.innerHTML='<div class="feedback warn">Consultando estado administrativo del pago...</div>';
+  apiRequest('checkPaymentStatus',{email}).then(r=>{
+    const status=String(r.status||'SIN_REGISTRO').trim().toUpperCase();
+    const valid=status==='VALIDADO';
+    const pill='<span class="paymentStatusPill '+(valid?'valid':status==='SIN_REGISTRO'?'none':'pending')+'">'+status+'</span>';
+    if(certBox) certBox.innerHTML=pill;
+    if(fb) fb.innerHTML='<div class="feedback '+(valid?'ok':'warn')+'">Estado del pago para '+escapeHtml(email)+': <b>'+status+'</b>.</div>';
+
+    // Sincroniza el panel lateral y la barra de progreso con el estado real del Sheet.
+    state.payment = {status:status, validated:valid, checkedAt:new Date().toLocaleString()};
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    renderStatus();
+
+    if(valid){ toast('Pago validado. Repositorio del curso desbloqueado.'); }
+    state.courseResources=null;
+    const active=document.querySelector('.section.active')?.id;
+    if(active==='recursos'){ const repoBtn=[...document.querySelectorAll('.tabs button')].find(b=>b.textContent.includes('Guías')); if(repoBtn) resourceTab('repo', repoBtn); }
+  }).catch(err=>{
+    console.error('Error al consultar estado de pago:', err);
+    if(fb) fb.innerHTML='<div class="feedback bad">No se pudo consultar el estado. Detalle: '+escapeHtml(String(err && (err.message || err) || 'error desconocido'))+'</div>';
+  });
+}
+function issueCertificate(){ if(!state.user) return; if(!allModulesComplete()||!state.finalEval?.approved){document.getElementById('certFeedback').innerHTML='<div class="feedback warn">Aún no cumple condiciones académicas de certificación.</div>';return} const cert={name:state.user.name,email:state.user.email,score:state.finalEval.score,course:CONFIG.courseTitle,hours:CONFIG.hours,date:new Date().toLocaleDateString()}; apiRequest('issueCertificate',{email:state.user.email,cert}).then(r=>{ if(r.ok){state.cert={code:r.code,pdfUrl:r.pdfUrl,verifyUrl:r.verifyUrl};state.payment={status:'VALIDADO'};save();document.getElementById('certPaymentStatus').innerHTML='<span class="paymentStatusPill valid">VALIDADO</span>';document.getElementById('certFeedback').innerHTML=`<div class="feedback ok">Certificado generado. <a href="${r.pdfUrl}" target="_blank">Abrir PDF</a> · <a href="${r.verifyUrl}" target="_blank">Validar</a></div>`;} else {document.getElementById('certFeedback').innerHTML=`<div class="feedback warn">${r.message||'No se pudo generar certificado. Verifique validación de pago y configuración de Apps Script.'}<br><br><button onclick="openPaymentModal()">Subir comprobante</button> <button onclick="checkPaymentStatusUI()">Consultar estado</button></div>`;} }); }
+
+
+const AUTHOR_GALLERY=[
+  {src:'assets/certificaciones/competencia-teschi.jpg',caption:'Certificación de competencia laboral · CONOCER / TESCHI · Impartición de sesiones/clases síncronas con plataformas, dispositivos y herramientas digitales.'},
+  {src:'assets/certificaciones/membresia-codii.jpg',caption:'Membresía de investigador · Colegio de Doctores e Investigadores de Iberoamérica (CODII).'},
+  {src:'assets/certificaciones/recategorizacion-investigador.jpg',caption:'Recategorización como Investigador Agregado 2 · Ministerio de Educación, Ecuador.'},
+  {src:'assets/certificaciones/membresia-rediem.jpg',caption:'Membresía académica · Red de Educación, Innovación y Empresa (REDIEM).'}
+];
+function initAuthorGallery(){
+  const track=document.getElementById('galleryTrack');
+  if(!track) return;
+  track.innerHTML=AUTHOR_GALLERY.map(item=>
+    `<div class="gallery-item"><img src="${item.src}" alt="${escapeHtml(item.caption)}"><div class="gallery-caption">${item.caption}</div></div>`
+  ).join('');
+  let index=0;
+  const move=()=>{ track.style.transform=`translateX(-${index*100}%)`; };
+  move();
+  if(track.dataset.ready==='1') return;
+  track.dataset.ready='1';
+  setInterval(()=>{ index=(index+1)%AUTHOR_GALLERY.length; move(); }, 4200);
+}
+
+function renderAll(){ setupNav(); renderStatus(); renderFlowHeaders(); renderRoute(); const active=document.querySelector('.section.active')?.id || 'inicio'; if(active==='recursos') resourceTab('mods', document.querySelector('.tabs button')); renderActivities(); renderModuleEvalArea(); renderFinal(); hydratePublicBrochureCard(); }
+function initCourse(){ setupNav(); renderModuleDock(); resourceTab('mods', document.querySelector('.tabs button')); initAuthorGallery(); renderAll(); const h=(location.hash||'').replace('#',''); const act=h.match(/^actividad-m(\d+)$/); const ev=h.match(/^evaluacion-m(\d+)$/); if(act){showSection('actividades'); setTimeout(()=>showActivity(Number(act[1])),250); return;} if(ev){showSection('evaluaciones'); setTimeout(()=>showModuleEval(Number(ev[1])),250); return;} if(h&&document.getElementById(h)){showSection(h)} else {showSection('inicio')} }
+try{ initCourse(); }catch(err){ console.error(err); }
+
+function dismissLiveMentor(){
+  const box=document.getElementById('liveMentoringFloat');
+  if(box) box.style.display='none';
+  try{ sessionStorage.setItem('LIVE_MENTOR_DISMISSED','1'); }catch(e){}
+}
+(function(){
+  try{
+    if(sessionStorage.getItem('LIVE_MENTOR_DISMISSED')==='1'){
+      const box=document.getElementById('liveMentoringFloat');
+      if(box) box.style.display='none';
+    }
+  }catch(e){}
+})();
+
+
+/* ===== V29: diagnóstico ligero de publicación en GitHub Pages ===== */
+(function(){
+  const requiredAssets = [
+    'assets/logos/codii-logo.png',
+    'assets/logos/academia-universal.png',
+    'assets/autor/yordenis-ramos.jpg',
+    'assets/video/bienvenida-yordenis.mp4',
+    'assets/certificaciones/membresia-codii.jpg',
+    'presentaciones/modulo1.html',
+    'certificado_modelo_muestra.pdf'
+  ];
+  function checkAsset(url){
+    return fetch(url, {method:'HEAD', cache:'no-store'}).then(r=>({url, ok:r.ok, status:r.status})).catch(()=>({url, ok:false, status:'ERR'}));
+  }
+  window.verificarPublicacionGitHub = async function(){
+    const results = await Promise.all(requiredAssets.map(checkAsset));
+    const bad = results.filter(x=>!x.ok);
+    console.table(results);
+    if(bad.length){
+      alert('Hay archivos que GitHub Pages no encuentra. Revise que index.html, assets, presentaciones y certificado_modelo_muestra.pdf estén en la raíz del repositorio. Abra la consola para ver detalles.');
+    }else{
+      alert('Publicación verificada: los archivos esenciales están accesibles.');
+    }
+    return results;
+  };
+})();
+
+</script>
+</body>
+</html>
