@@ -490,6 +490,30 @@ async function hydratePublicBrochureCard(){
 }
 
 function markResource(id){ if(!moduleUnlocked(id)) return; apiRequest('markResource',{email:state.user.email,module:id,course:CONFIG.courseTitle}).then(r=>{state.resources[id]=true;save();toast(r.local?'Recurso marcado en modo local.':'Recurso registrado en Sheets.')}); }
+
+function openPresentation(id){
+  if(!state.user){
+    showSection('inicio');
+    toast('Primero registre su identidad para abrir las presentaciones.');
+    return;
+  }
+  if(!moduleUnlocked(id)){
+    showSection('ruta');
+    toast('Esta presentación está bloqueada. Complete el módulo anterior o valide su pago.');
+    return;
+  }
+  const moduleId = Number(id);
+  if(!moduleId || moduleId < 1 || moduleId > MODULES.length){
+    toast('No se encontró la presentación solicitada.');
+    return;
+  }
+  const url = new URL(`presentaciones/modulo${moduleId}.html`, window.location.href).href;
+  const win = window.open(url, '_blank', 'noopener');
+  if(!win){
+    window.location.href = url;
+  }
+}
+
 function showActivity(id){
   showSection('actividades');
   const m=MODULES.find(x=>x.id===id);
