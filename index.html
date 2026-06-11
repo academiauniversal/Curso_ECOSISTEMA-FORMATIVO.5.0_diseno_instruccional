@@ -497,21 +497,29 @@ function openPresentation(id){
     toast('Primero registre su identidad para abrir las presentaciones.');
     return;
   }
+
   if(!moduleUnlocked(id)){
     showSection('ruta');
     toast('Esta presentación está bloqueada. Complete el módulo anterior o valide su pago.');
     return;
   }
+
   const moduleId = Number(id);
+
   if(!moduleId || moduleId < 1 || moduleId > MODULES.length){
     toast('No se encontró la presentación solicitada.');
     return;
   }
-  const url = new URL(`presentaciones/modulo${moduleId}.html`, window.location.href).href;
-  const win = window.open(url, '_blank', 'noopener');
-  if(!win){
-    window.location.href = url;
-  }
+
+  const url = `presentaciones/modulo${moduleId}.html`;
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 function showActivity(id){
