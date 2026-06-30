@@ -281,10 +281,229 @@
 .repoIntro{background:linear-gradient(135deg,#071638,#123f69);color:#fff;border-radius:26px;padding:22px;margin:18px 0;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border:1px solid rgba(231,187,50,.45);box-shadow:0 20px 48px rgba(7,11,36,.18)}
 .repoIntro h3{margin:0 0 8px;color:#fff}.repoIntro p{margin:0;color:#e9eef9}.repoState{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:12px 14px;font-weight:950;white-space:nowrap}.repoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}.repoCard{border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 14px 34px rgba(15,23,42,.08);overflow:hidden;display:flex;flex-direction:column;min-height:230px}.repoCard.public{border-color:rgba(19,138,74,.32)}.repoCard.lockedRepo{background:linear-gradient(180deg,#fff,#f8fafc);opacity:.88}.repoTop{height:8px;background:linear-gradient(90deg,var(--navy),var(--gold))}.repoCard.public .repoTop{background:linear-gradient(90deg,var(--green),var(--cyan))}.repoBody{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}.repoMeta{display:flex;gap:8px;flex-wrap:wrap}.repoType{border-radius:999px;padding:5px 9px;font-size:12px;font-weight:950;background:#eef4ff;color:#0b2a6f}.repoAccess{border-radius:999px;padding:5px 9px;font-size:12px;font-weight:950}.repoAccess.ok{background:#e8f7ef;color:#075e30}.repoAccess.lock{background:#fff5d9;color:#7b4b00}.repoActions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}.repoActions a,.repoActions button{min-width:150px}.repoEmpty{border:1px dashed #cbd5e1;border-radius:18px;padding:18px;color:var(--muted);background:#f8fafc}.repoNote{margin-top:14px;border:1px solid rgba(231,187,50,.42);background:#fffaf0;border-radius:18px;padding:14px 16px;color:#5c4400}.repoRefresh{background:#fff;color:var(--navy);border:1px solid var(--line)}
 @media(max-width:860px){.repoIntro{grid-template-columns:1fr}.repoGrid{grid-template-columns:1fr}.repoState{white-space:normal}.trustSealInner{align-items:flex-start}.trustSealInner img{max-width:150px}}
+/* ===== AVISO NEÓN · INICIO DE GRUPO ===== */
+.launchBadge{
+  position:fixed;
+  top:112px;
+  right:22px;
+  width:min(390px,calc(100vw - 44px));
+  z-index:117;
+  cursor:pointer;
+  overflow:hidden;
+  border-radius:28px;
+  color:#fff;
+  border:1px solid rgba(22,181,232,.72);
+  background:
+    radial-gradient(circle at 18% 15%,rgba(22,181,232,.38),transparent 32%),
+    radial-gradient(circle at 90% 10%,rgba(231,187,50,.32),transparent 34%),
+    linear-gradient(135deg,#070b24 0%,#0b2a6f 54%,#06182d 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 24px rgba(22,181,232,.42),
+    0 18px 54px rgba(7,11,36,.36);
+  animation:launchEnter .95s cubic-bezier(.16,1,.3,1), launchFloat 3.2s ease-in-out infinite .95s;
+}
 
+.launchBadge:before{
+  content:"";
+  position:absolute;
+  inset:-45%;
+  background:linear-gradient(115deg,transparent 0%,transparent 38%,rgba(255,255,255,.18) 48%,transparent 60%,transparent 100%);
+  transform:translateX(-70%) rotate(8deg);
+  animation:launchShine 3.8s ease-in-out infinite 1.2s;
+}
+
+.launchBadge:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  box-shadow:0 0 22px rgba(22,181,232,.72) inset;
+  pointer-events:none;
+}
+
+.launchBadgeInner{
+  position:relative;
+  z-index:2;
+  padding:17px 18px 16px;
+}
+
+.launchTop{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.launchPill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#06182d;
+  background:linear-gradient(135deg,#e7bb32,#fff1a6);
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  box-shadow:0 0 18px rgba(231,187,50,.36);
+}
+
+.launchPulse{
+  width:10px;
+  height:10px;
+  background:#22c55e;
+  border-radius:50%;
+  box-shadow:0 0 0 0 rgba(34,197,94,.75);
+  animation:launchPulse 1.6s infinite;
+}
+
+.launchClose{
+  width:31px;
+  height:31px;
+  border-radius:999px;
+  padding:0;
+  background:rgba(255,255,255,.11);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+  font-size:17px;
+  line-height:1;
+}
+
+.launchBadge h3{
+  margin:13px 0 5px;
+  color:#fff;
+  font-size:22px;
+  line-height:1.08;
+  letter-spacing:-.02em;
+}
+
+.launchDate{
+  display:block;
+  margin:8px 0 10px;
+  font-size:31px;
+  line-height:1;
+  color:#e7bb32;
+  font-weight:950;
+  text-shadow:
+    0 0 10px rgba(231,187,50,.42),
+    0 0 22px rgba(22,181,232,.26);
+  animation:launchZoom 2.4s ease-in-out infinite;
+}
+
+.launchMini{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin:12px 0;
+}
+
+.launchMini div{
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.09);
+  border-radius:15px;
+  padding:9px 10px;
+}
+
+.launchMini b{
+  display:block;
+  color:#e7bb32;
+  font-size:15px;
+}
+
+.launchMini span{
+  display:block;
+  color:#e8eefb;
+  font-size:12px;
+  margin-top:2px;
+}
+
+.launchCTA{
+  width:100%;
+  margin-top:10px;
+  border-radius:16px;
+  padding:11px 14px;
+  background:linear-gradient(135deg,#16b5e8,#e7bb32);
+  color:#06182d;
+  font-weight:950;
+  box-shadow:0 10px 26px rgba(22,181,232,.22);
+}
+
+.launchCTA:hover{
+  transform:scale(1.025);
+}
+
+@keyframes launchEnter{
+  from{opacity:0;transform:translateX(120%) scale(.86) rotate(2deg)}
+  to{opacity:1;transform:translateX(0) scale(1) rotate(0)}
+}
+
+@keyframes launchFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-8px) scale(1.015)}
+}
+
+@keyframes launchZoom{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.055)}
+}
+
+@keyframes launchShine{
+  0%{transform:translateX(-75%) rotate(8deg)}
+  46%,100%{transform:translateX(85%) rotate(8deg)}
+}
+
+@keyframes launchPulse{
+  70%{box-shadow:0 0 0 12px rgba(34,197,94,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+
+@media(max-width:920px){
+  .launchBadge{
+    top:96px;
+    left:14px;
+    right:14px;
+    width:auto;
+  }
+
+  .launchDate{
+    font-size:26px;
+  }
+
+  .launchMini{
+    grid-template-columns:1fr;
+  }
+}
 </style></head><body>
 <header class="top"><div class="top-inner"><div class="brand"><img src="assets/logos/codii-logo.png" alt="CODII"><div class="brand-title">Curso online interactivo<small>Diseño Instruccional 5.0 · IA · Certificación</small></div></div><div class="collab"><span class="small">COLABORA</span><img src="assets/logos/academia-universal.png" alt="Academia Universal"></div><nav class="nav" id="nav"></nav></div></header>
 <div class="moduleDock"><div id="moduleDock" class="moduleDockInner"><span class="moduleDockTitle">Ruta modular</span></div></div>
+  <div id="launchBadge" class="launchBadge" onclick="showSection('inicio')" title="Preinscripción Grupo #5">
+  <div class="launchBadgeInner">
+    <div class="launchTop">
+      <span class="launchPill"><span class="launchPulse"></span><span id="launchGroup">Grupo #5</span></span>
+      <button class="launchClose" onclick="closeLaunchBadge(event)" title="Ocultar aviso">×</button>
+    </div>
+
+    <h3>Iniciamos nueva cohorte</h3>
+    <span class="launchDate" id="launchDate">6 de julio de 2026</span>
+
+    <div class="launchMini">
+      <div>
+        <b id="launchPromo">Promo desde el 1 de julio</b>
+        <span>50% de descuento</span>
+      </div>
+      <div>
+        <b id="launchPrice">USD 25</b>
+        <span>Preinscripción sin costo</span>
+      </div>
+    </div>
+
+    <button class="launchCTA" onclick="event.stopPropagation(); showSection('inicio')">
+      Reservar cupo ahora
+    </button>
+  </div>
+</div>
 <section class="hero"><div class="hero-inner"><div><div class="eyebrow">Colegio de Doctores e Investigadores de Iberoamérica · Academia Universal · 80 horas académicas</div><h1>Diseño Instruccional 5.0 con Inteligencia Artificial</h1><p class="lead">Creación de planes didácticos, situaciones multinivel, rúbricas inteligentes, evaluaciones automatizadas y entornos interactivos de aprendizaje</p><div class="authorBar"><img src="assets/autor/yordenis-ramos.jpg" alt="Autor"><div><b>Lic. Yordenis Ramos López, Ph.D.(c)</b><br><span>Autor y Director Académico del Curso · Especialista en ECOSISTEMA 5.0</span></div></div><div class="actions"><button onclick="showSection('inicio')">Iniciar recorrido</button><button class="paypalHero" onclick="openPaymentModal()">Inscribirme · USD 25</button><button class="whatsHero" onclick="openWhatsApp()">WhatsApp Academia Universal</button><button class="secondary" onclick="showSection('autor')">Conocer autor</button></div></div><div class="hero-card"><div class="videoShell"><div class="videoFrame"><video controls preload="metadata" poster="assets/video/poster-bienvenida.jpg"><source src="assets/video/bienvenida-yordenis.mp4" type="video/mp4"></video></div><div><h3>Mensaje del director académico</h3><p class="muted">Antes de iniciar, revise la visión del curso y el sentido práctico de construir productos didácticos, evaluativos y tecnológicos para escenarios reales.</p></div></div><div class="stats"><div class="stat"><b>80</b><br><span>horas académicas</span></div><div class="stat"><b>6</b><br><span>módulos prácticos</span></div><div class="stat"><b>70/100</b><br><span>mínimo aprobatorio</span></div><div class="stat"><b>5.0</b><br><span>enfoque Ecosistema</span></div></div></div></div></section>
 <div class="paymentRibbon"><div class="paymentRibbonInner"><div><h3><span class="pulseDot"></span>Inscripción abierta · Diseño Instruccional 5.0 con IA</h3><p>Acceda a 80 horas académicas, seis módulos prácticos, evaluaciones modulares, proyecto final y certificación digital. Valor de inversión: <b>USD 25</b>.</p></div><div class="payActions"><span class="priceChip">Curso premium <b>$25</b></span><button class="paypalBtn" onclick="openPayPal()">Pagar por PayPal</button><button class="bankBtn primaryBank" onclick="openPaymentModal()">Ver medios de pago y enviar comprobante</button><button class="secondary" onclick="showSection('inicio')">Preinscribirme</button><button class="secondary" onclick="showSection('pagos')">Panel de pagos</button></div></div></div>
 <div class="trustSeal"><a class="trustSealInner trustSealLink" href="https://www.codi2.edu.ec/sitio/principal" target="_blank" rel="noopener noreferrer" title="Abrir portal oficial del Colegio de Doctores e Investigadores de Iberoamérica"><img src="assets/logos/codii-logo.png" alt="Colegio de Doctores e Investigadores de Iberoamérica"><div><h3>Curso avalado por el Colegio de Doctores e Investigadores de Iberoamérica</h3><p>Formación académica con respaldo institucional, trazabilidad de evidencias, evaluación modular y certificación digital sujeta a validación académica y administrativa.</p></div><span class="sealBadge">Aval CODII</span></a></div>
@@ -675,7 +894,49 @@ function initAuthorGallery(){
 
 function renderAll(){ setupNav(); renderStatus(); renderFlowHeaders(); renderRoute(); const active=document.querySelector('.section.active')?.id || 'inicio'; if(active==='recursos') resourceTab('mods', document.querySelector('.tabs button')); renderActivities(); renderModuleEvalArea(); renderFinal(); hydratePublicBrochureCard(); }
 function initCourse(){ setupNav(); renderModuleDock(); resourceTab('mods', document.querySelector('.tabs button')); initAuthorGallery(); renderAll(); const h=(location.hash||'').replace('#',''); const act=h.match(/^actividad-m(\d+)$/); const ev=h.match(/^evaluacion-m(\d+)$/); if(act){showSection('actividades'); setTimeout(()=>showActivity(Number(act[1])),250); return;} if(ev){showSection('evaluaciones'); setTimeout(()=>showModuleEval(Number(ev[1])),250); return;} if(h&&document.getElementById(h)){showSection(h)} else {showSection('inicio')} }
-try{ initCourse(); }catch(err){ console.error(err); }
+/* ===== CONFIGURACIÓN MENSUAL · AVISO DE INICIO DE GRUPO ===== */
+const GROUP_BANNER = {
+  enabled: true,
+  group: 'Grupo #5',
+  startDate: '6 de julio de 2026',
+  promoText: 'Promo desde el 1 de julio',
+  priceText: 'USD 25'
+};
+
+function renderLaunchBadge(){
+  const box = document.getElementById('launchBadge');
+  if(!box) return;
+
+  if(!GROUP_BANNER.enabled){
+    box.style.display = 'none';
+    return;
+  }
+
+  try{
+    if(sessionStorage.getItem('LAUNCH_BADGE_CLOSED') === GROUP_BANNER.group){
+      box.style.display = 'none';
+      return;
+    }
+  }catch(e){}
+
+  const g = document.getElementById('launchGroup');
+  const d = document.getElementById('launchDate');
+  const p = document.getElementById('launchPromo');
+  const pr = document.getElementById('launchPrice');
+
+  if(g) g.textContent = GROUP_BANNER.group;
+  if(d) d.textContent = GROUP_BANNER.startDate;
+  if(p) p.textContent = GROUP_BANNER.promoText;
+  if(pr) pr.textContent = GROUP_BANNER.priceText;
+}
+
+function closeLaunchBadge(event){
+  if(event) event.stopPropagation();
+  const box = document.getElementById('launchBadge');
+  if(box) box.style.display = 'none';
+  try{ sessionStorage.setItem('LAUNCH_BADGE_CLOSED', GROUP_BANNER.group); }catch(e){}
+}
+try{ initCourse(); renderLaunchBadge(); }catch(err){ console.error(err); }
 
 function dismissLiveMentor(){
   const box=document.getElementById('liveMentoringFloat');
