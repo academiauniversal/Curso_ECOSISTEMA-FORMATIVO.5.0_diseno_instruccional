@@ -500,6 +500,58 @@
     grid-template-columns:1fr;
   }
 }
+/* ===== EXPERIENCIA DINÁMICA · REGISTRO DE INTERÉS ===== */
+.preRegCard{
+  position:relative;
+  overflow:hidden;
+}
+
+.preRegCard.leadFocus{
+  border-color:rgba(231,187,50,.85);
+  box-shadow:
+    0 0 0 4px rgba(231,187,50,.20),
+    0 24px 62px rgba(7,11,36,.18);
+  animation:leadCardLift 1.2s ease both, leadGlow 2.2s ease-in-out 2;
+}
+
+.preRegCard.leadFocus:before{
+  content:"Grupo #5 · Cupos en conformación";
+  position:absolute;
+  top:14px;
+  right:-44px;
+  transform:rotate(28deg);
+  background:linear-gradient(135deg,#16b5e8,#e7bb32);
+  color:#06182d;
+  padding:8px 54px;
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  box-shadow:0 12px 28px rgba(22,181,232,.18);
+}
+
+.preRegCard.leadFocus h2{
+  color:#0b2a6f;
+}
+
+.preRegCard.leadFocus input:first-of-type{
+  border-color:#e7bb32;
+  box-shadow:0 0 0 4px rgba(231,187,50,.18);
+}
+
+@keyframes leadCardLift{
+  from{transform:translateY(18px);opacity:.88}
+  to{transform:translateY(0);opacity:1}
+}
+
+@keyframes leadGlow{
+  0%,100%{
+    box-shadow:0 0 0 4px rgba(231,187,50,.16),0 24px 62px rgba(7,11,36,.14);
+  }
+  50%{
+    box-shadow:0 0 0 7px rgba(22,181,232,.20),0 28px 72px rgba(7,11,36,.22);
+  }
+}  
 </style></head><body>
 <header class="top"><div class="top-inner"><div class="brand"><img src="assets/logos/codii-logo.png" alt="CODII"><div class="brand-title">Curso online interactivo<small>Diseño Instruccional 5.0 · IA · Certificación</small></div></div><div class="collab"><span class="small">COLABORA</span><img src="assets/logos/academia-universal.png" alt="Academia Universal"></div><nav class="nav" id="nav"></nav></div></header>
 <div class="moduleDock"><div id="moduleDock" class="moduleDockInner"><span class="moduleDockTitle">Ruta modular</span></div></div>
@@ -617,6 +669,31 @@ function openPaymentModal(){ document.getElementById('paymentModal')?.classList.
 function closePaymentModal(){ document.getElementById('paymentModal')?.classList.remove('active'); }
 function copyText(text){ navigator.clipboard?.writeText(text).then(()=>toast('Datos copiados al portapapeles.')).catch(()=>toast(text)); }
 function showSection(id){ const target=document.getElementById(id); if(!target) return; document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); target.classList.add('active'); document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.sec===id)); setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),40); }
+function scrollToLeadForm(){
+  showSection('inicio');
+
+  setTimeout(()=>{
+    const card = document.getElementById('registroInteres');
+    const input = document.getElementById('leadName');
+
+    if(card){
+      card.scrollIntoView({behavior:'smooth', block:'center'});
+      card.classList.remove('leadFocus');
+      void card.offsetWidth;
+      card.classList.add('leadFocus');
+
+      setTimeout(()=>{
+        card.classList.remove('leadFocus');
+      }, 7200);
+    }
+
+    if(input){
+      setTimeout(()=>input.focus(), 850);
+    }
+
+    toast('Preinscripción sin costo: deje sus datos y asegure información prioritaria del Grupo #5.');
+  }, 180);
+}
 function setupNav(){ const items=[['inicio','Inicio'],['ruta','Ruta'],['recursos','Repositorio'],['actividades','Actividades'],['evaluaciones','Evaluaciones'],['final','Proyecto final'],['pagos','Pagos'],['certificado','Certificado'],['autor','Autor']]; document.getElementById('nav').innerHTML=items.map(([id,txt])=>`<button data-sec="${id}" onclick="showSection('${id}')">${txt}</button>`).join(''); }
 function paymentAccessActive(){ return !!(state.payment && ['PENDIENTE','VALIDADO'].includes(String(state.payment.status||'').toUpperCase())); }
 function moduleState(id){ if(moduleComplete(id)) return 'done'; if(!state.user) return 'locked'; if(paymentAccessActive()) return 'available'; if(id===1) return 'available'; return state.moduleEvals[id-1]?.approved ? 'available' : 'locked'; }
@@ -857,7 +934,7 @@ async function submitPaymentProof(){
   if(fb) fb.innerHTML='<div class="feedback warn">Cargando comprobante. Espere unos segundos...</div>';
   try{
     const fileBase64=await fileToBase64(file);
-    const payload={name,email,phone,country,paymentMethod,amountUsd:50,transactionRef,notes,fileName:file.name,mimeType:file.type,fileBase64,course:CONFIG.courseTitle};
+    const payload={name,email,phone,country,paymentMethod,amountUsd:25,transactionRef,notes,fileName:file.name,mimeType:file.type,fileBase64,course:CONFIG.courseTitle};
     const r=await apiFormPost('submitPaymentProof',payload);
     if(r.ok){ state.payment={status:'PENDIENTE',method:paymentMethod,date:new Date().toLocaleString()}; save(); if(fb) fb.innerHTML='<div class="feedback ok">Comprobante enviado. Estado: <b>PENDIENTE DE VALIDACIÓN</b>. Academia Universal revisará el pago antes de emitir el certificado.</div>'; toast('Comprobante enviado para validación administrativa.'); }
     else { if(fb) fb.innerHTML='<div class="feedback bad">No se pudo enviar el comprobante. Revise que la URL /exec esté pegada en el index.html o envíelo por WhatsApp.</div>'; }
